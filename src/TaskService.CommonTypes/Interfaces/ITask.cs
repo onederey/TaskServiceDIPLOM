@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Logging;
 using TaskService.CommonTypes.Classes;
 
 namespace TaskService.CommonTypes.Interfaces
@@ -33,11 +29,6 @@ namespace TaskService.CommonTypes.Interfaces
         /// <returns>
         /// Returns TaskResult with errors/warnings and results of task execution
         /// </returns>
-        TaskResult Execute(CancellationToken token);
-
-        /// <summary>
-        /// Obsolete ?..
-        /// </summary>
-        TaskResult Execute(CancellationToken token, params string[] parameters);
+        TaskResult Execute(CancellationToken token, ILogger logger);
     }
 }

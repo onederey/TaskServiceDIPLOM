@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BankDatabase", "src\TaskSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService.CommonTypes", "src\TaskService.CommonTypes\TaskService.CommonTypes.csproj", "{2AC07D7C-69DC-4AC5-904B-D06C52C505CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskService.Plugin.TestPlug", "src\TaskService.Plugin.TestPlug\TaskService.Plugin.TestPlug.csproj", "{D63896F3-B50A-4882-95EE-B2D497CBC64B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{2AC07D7C-69DC-4AC5-904B-D06C52C505CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC07D7C-69DC-4AC5-904B-D06C52C505CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC07D7C-69DC-4AC5-904B-D06C52C505CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63896F3-B50A-4882-95EE-B2D497CBC64B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63896F3-B50A-4882-95EE-B2D497CBC64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63896F3-B50A-4882-95EE-B2D497CBC64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63896F3-B50A-4882-95EE-B2D497CBC64B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

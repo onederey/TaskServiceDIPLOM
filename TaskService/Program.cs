@@ -1,5 +1,6 @@
 using NLog.Web;
 using TaskService;
+using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 
 var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
@@ -15,7 +16,9 @@ IHost host = Host.CreateDefaultBuilder(args)
             config.GetSection("Settings:ConnectionString").Value,
             config.GetSection("Settings:CommandTimeout").Value);
 
-        services.AddHostedService<Worker>();
+        services
+            .AddSingleton<IPluginLoader, PluginLoader>()
+            .AddHostedService<Worker>();
     })
     .ConfigureLogging(logging =>
     {

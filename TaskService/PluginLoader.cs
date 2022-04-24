@@ -6,18 +6,18 @@ namespace TaskService
     /// <summary>
     /// Plugins loader, dont catch errors inside, must be used with try/catch outsdide
     /// </summary>
-    public class PluginLoader
+    public class PluginLoader : IPluginLoader
     {
-        ILogger _logger;
+        ILogger<PluginLoader> _logger;
 
-        public PluginLoader(ILogger logger)
+        public PluginLoader(ILogger<PluginLoader> logger)
         {
             _logger = logger;
         }
 
         public ICollection<ITask> LoadPlugins(string[] pluginPaths)
         {
-            _logger.LogInformation($"Started loading plugins (count = {pluginPaths.Length})");
+            _logger.LogInformation($"Started loading plugins (avalible dlls count = {pluginPaths.Length})");
 
             var plugins = pluginPaths.SelectMany(pluginPath =>
             {
