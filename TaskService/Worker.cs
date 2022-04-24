@@ -1,50 +1,44 @@
 using System.Text.RegularExpressions;
-using TaskService.CommonTypes.Interfaces;
+using TaskService.CommonTypes.Classes;
+using TaskService.Interfaces;
 
 namespace TaskService
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly IPluginLoader _pluginLoader;
+        private readonly IPluginService _pluginService;
 
-        private CancellationTokenSource _cts;
-        private Regex _patternForPlugins = new Regex("^TaskService[.]Plugin[.][a-zA-Z.]+[.]dll$");
-
-        public Worker(ILogger<Worker> logger, IPluginLoader pluginLoader)
+        public Worker(ILogger<Worker> logger, IPluginService pluginService)
         {
             _logger = logger;
-            _pluginLoader = pluginLoader;
-            _cts = new CancellationTokenSource();
+            _pluginService = pluginService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var plugins = _pluginLoader.LoadPlugins(GetAssemblyPaths());
+            Thread pluginListener = new Thread(() => _pluginService.StartPluginListener(stoppingToken));
+            pluginListener.Start();
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                foreach(var plugin in plugins)
+                var plugins = _pluginService.GetPlugins();
+
+                if (plugins.Count == 0)
+                    _logger.LogWarning("No plugins availible");
+
+                foreach (var plugin in plugins)
                 {
                     // [TODO]:
                     // Add link to scheduler from db
                     // Check execution rules
-                    // Add listener for dynamic plugin loading
-                    // Add auto-copy of plugin into build directory or project
+                    // Add auto-copy of plugin into build directory or project ! (only for my comfort)
 
-                    plugin.Execute(_cts.Token, _logger);
+                    plugin.Execute(stoppingToken, _logger);
                 }
 
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(TaskServiceConst.DelayForTasks, stoppingToken);
             }
-        }
-
-        private string[] GetAssemblyPaths()
-        {
-            return Directory
-                .GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.*", SearchOption.AllDirectories)
-                .Where(x => _patternForPlugins.IsMatch(Path.GetFileName(x)))
-                .ToArray();
         }
     }
 }

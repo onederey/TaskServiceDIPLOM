@@ -10,4 +10,8 @@
     <ProjectReference Include="..\TaskService.CommonTypes\TaskService.CommonTypes.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y /d  &quot;$(ProjectDir)External\*.dll&quot; &quot;$(ProjectDir)..\..\TaskService\bin\Debug\net6.0&quot;" />
+  </Target>
+
 </Project>

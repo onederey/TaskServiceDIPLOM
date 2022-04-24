@@ -1,7 +1,9 @@
 using NLog.Web;
 using TaskService;
-using TaskService.CommonTypes.Interfaces;
+using TaskService.Classes;
+using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Sql;
+using TaskService.Interfaces;
 
 var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
@@ -16,8 +18,11 @@ IHost host = Host.CreateDefaultBuilder(args)
             config.GetSection("Settings:ConnectionString").Value,
             config.GetSection("Settings:CommandTimeout").Value);
 
+        TaskServiceConst.InitDelay(config.GetSection("Settings:Delay").Value);
+
         services
             .AddSingleton<IPluginLoader, PluginLoader>()
+            .AddSingleton<IPluginService, PluginService>()
             .AddHostedService<Worker>();
     })
     .ConfigureLogging(logging =>

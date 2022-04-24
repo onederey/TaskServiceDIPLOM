@@ -13,12 +13,9 @@ namespace TaskService.Plugin.TestPlug
         public TaskDTO ServiceTask { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public TaskResult Execute(CancellationToken token, ILogger logger)
-        {
-            while (!token.IsCancellationRequested)
-            {
-                logger.LogInformation("I'm test worker, it is working");
-                Thread.Sleep(1000);
-            }
+        { 
+            logger.LogInformation("I'm test worker, it is working");
+            Thread.Sleep(1000);
 
             return new TaskResult();
         }

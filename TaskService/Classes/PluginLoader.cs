@@ -1,7 +1,8 @@
 ﻿using System.Reflection;
 using TaskService.CommonTypes.Interfaces;
+using TaskService.Interfaces;
 
-namespace TaskService
+namespace TaskService.Classes
 {
     /// <summary>
     /// Plugins loader, dont catch errors inside, must be used with try/catch outsdide
