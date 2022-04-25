@@ -8,14 +8,6 @@ namespace TaskService.CommonTypes.Interfaces
     /// </summary>
     public interface ITask
     {
-        /// <summary>
-        /// Obsolete ?...
-        /// </summary>
-        string Id { get; }
-
-        /// <summary>
-        /// Obsolete ?...
-        /// </summary>
         string Name { get; }
 
         /// <summary>
@@ -29,6 +21,6 @@ namespace TaskService.CommonTypes.Interfaces
         /// <returns>
         /// Returns TaskResult with errors/warnings and results of task execution
         /// </returns>
-        TaskResult Execute(CancellationToken token, ILogger logger);
+        TaskResult Execute(CancellationToken token, IMailService mailService, ILogger logger);
     }
 }

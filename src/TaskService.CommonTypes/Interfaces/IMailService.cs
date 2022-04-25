@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TaskService.CommonTypes.Interfaces;
 
-namespace TaskService.CommonTypes.Classes
+namespace TaskService.CommonTypes.Interfaces
 {
-    public class MailService : IMailService
+    public interface IMailService
     {
 
     }

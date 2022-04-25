@@ -6,14 +6,13 @@ namespace TaskService.Plugin.TestPlug
 {
     public class Class1 : ITask
     {
-        public string Id => "0";
-
         public string Name => "TestWorkerPlugin";
 
         public TaskDTO ServiceTask { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public TaskResult Execute(CancellationToken token, ILogger logger)
-        { 
+
+        public TaskResult Execute(CancellationToken token, IMailService mailService, ILogger logger)
+        {
             logger.LogInformation("I'm test worker, it is working");
             Thread.Sleep(1000);
 

@@ -16,7 +16,7 @@ namespace TaskService.Classes
         /// <summary>
         /// Pattern for plugins search
         /// </summary>
-        private Regex _patternForPlugins = new Regex("^TaskService[.]Plugin[.][a-zA-Z.]+[.]dll$");
+        private Regex _patternForPlugins = new Regex("^TaskService[.]Plugin[.][a-zA-Z.\\d]+[.]dll$");
 
         /// <summary>
         /// List of plugins

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TaskService.CommonTypes.Interfaces;
+using TaskService.CommonTypes.Classes;
+using TaskService.CommonTypes.Sql;
 
-namespace TaskService.CommonTypes.Classes
+namespace TaskService.Classes
 {
-    public class MailService : IMailService
+    public class Scheduler
     {
-
     }
 }

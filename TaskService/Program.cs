@@ -2,6 +2,7 @@ using NLog.Web;
 using TaskService;
 using TaskService.Classes;
 using TaskService.CommonTypes.Classes;
+using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 using TaskService.Interfaces;
 
@@ -21,6 +22,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         TaskServiceConst.InitDelay(config.GetSection("Settings:Delay").Value);
 
         services
+            .AddSingleton<IMailService, MailService>()
             .AddSingleton<IPluginLoader, PluginLoader>()
             .AddSingleton<IPluginService, PluginService>()
             .AddHostedService<Worker>();

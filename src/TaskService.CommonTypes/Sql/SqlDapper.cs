@@ -32,7 +32,7 @@ namespace TaskService.CommonTypes.Sql
                 _commandTimeout = timeout;
         }
 
-        public static IEnumerable<T> ExecuteQuerySP<T>(string sp, DynamicParameters? param = null)
+        public static ICollection<T> ExecuteQuerySP<T>(string sp, DynamicParameters? param = null)
         {
             using (IDbConnection conn = new SqlConnection(_connString))
             {
@@ -41,7 +41,7 @@ namespace TaskService.CommonTypes.Sql
                     sql: sp,
                     param: param, 
                     commandType: CommandType.StoredProcedure,
-                    commandTimeout: _commandTimeout);
+                    commandTimeout: _commandTimeout).ToList();
             }
         }
 
