@@ -31,6 +31,8 @@ namespace TaskService.CommonTypes.Classes
 
 		public string FilePath { get; set; } = string.Empty;
 
+		public string Url { get; set; } = string.Empty;
+
 		public int? FieldsCount { get; set; }
 
 		public string FieldsSeparator { get; set; } = "#";

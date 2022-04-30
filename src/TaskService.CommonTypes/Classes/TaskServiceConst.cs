@@ -14,6 +14,8 @@ namespace TaskService.CommonTypes.Classes
 
         public static int DelayForTasks = 1000;
 
+        public static int RetriesForFilesWork = 5;
+
         public static void InitDelay(string delay)
         {
             if (int.TryParse(delay, out var parsed))

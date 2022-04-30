@@ -9,6 +9,7 @@
     [TaskEndTime]     DATETIME       NOT NULL,
     [Dependency]      NVARCHAR (100) NOT NULL,
     [FilePath]        NVARCHAR (50)  NULL,
+    [Url]             NVARCHAR (50)  NULL,
     [FieldsCount]     INT            NULL,
     [FieldsSeparator] NVARCHAR (5)   NULL,
     [Params]          NVARCHAR(300)  NULL,

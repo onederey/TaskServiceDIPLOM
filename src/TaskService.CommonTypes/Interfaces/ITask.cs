@@ -21,6 +21,6 @@ namespace TaskService.CommonTypes.Interfaces
         /// <returns>
         /// Returns TaskResult with errors/warnings and results of task execution
         /// </returns>
-        TaskResult Execute(CancellationToken token, IMailService mailService, ILogger logger);
+        TaskResult Execute(CancellationToken token, ILogger logger);
     }
 }
