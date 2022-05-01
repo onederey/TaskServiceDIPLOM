@@ -101,5 +101,6 @@
     <Build Include="Tables\Reports.sql" />
     <Build Include="Tables\ServiceLogs.sql" />
     <Build Include="Tables\RatesCB.sql" />
+    <Build Include="Tables\BIC_Dictionary.sql" />
   </ItemGroup>
 </Project>

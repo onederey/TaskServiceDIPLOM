@@ -14,8 +14,6 @@ namespace TaskService.Plugin.CBRTasks
 
         public TaskDTO ServiceTask { get; set; }
 
-
-
         private DailyInfoSoapClient _cbrClient = new DailyInfoSoapClient(DailyInfoSoapClient.EndpointConfiguration.DailyInfoSoap12);
 
         private XmlHelper _serializer = new XmlHelper();
