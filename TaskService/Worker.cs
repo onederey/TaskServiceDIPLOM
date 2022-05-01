@@ -45,7 +45,9 @@ namespace TaskService
                             {
                                 _logger.LogInformation($"Scheduler: executing task - {plugin.Name}");
 
-                                plugin.Execute(stoppingToken, _logger);
+                                var result = plugin.Execute(stoppingToken, _logger);
+
+                                HandleResult(result);
                             }
                             else
                             {
@@ -91,6 +93,11 @@ namespace TaskService
             }
 
             return true;
+        }
+
+        private void HandleResult(TaskResult result)
+        {
+            // send mails, mark task last work date .... etc
         }
 
         private bool IsDependenciesResolved(string depends, out string resolveIt)

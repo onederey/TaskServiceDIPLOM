@@ -7,13 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReference1
+namespace TaskService.Plugin.CBRTasks.Api
 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.cbr.ru/", ConfigurationName="ServiceReference1.DailyInfoSoap")]
-    internal interface DailyInfoSoap
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://web.cbr.ru/", ConfigurationName="TaskService.Plugin.CBRTasks.Api.DailyInfoSoap")]
+    public interface DailyInfoSoap
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SaldoXML", ReplyAction="*")]
@@ -53,38 +53,38 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/ValIntDay", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement ValIntDay(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement ValIntDay(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/ValIntDay", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> ValIntDayAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> ValIntDayAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OstatDepo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement OstatDepo(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement OstatDepo(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OstatDepo", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OstatDepoAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OstatDepoAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/ROISfix", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement ROISfix(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement ROISfix(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/ROISfix", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> ROISfixAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> ROISfixAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Ruonia", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Ruonia(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Ruonia(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Ruonia", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RuoniaAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RuoniaAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RuoniaSV", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement RuoniaSV(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement RuoniaSV(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RuoniaSV", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RuoniaSVAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RuoniaSVAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RuoniaSVXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -95,10 +95,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrf7D", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement mrrf7D(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement mrrf7D(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrf7D", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> mrrf7DAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> mrrf7DAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrf7DXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -109,10 +109,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RepoDebtUSD", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement RepoDebtUSD(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement RepoDebtUSD(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RepoDebtUSD", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RepoDebtUSDAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RepoDebtUSDAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/RepoDebtUSDXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -123,10 +123,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrf", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement mrrf(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement mrrf(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrf", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> mrrfAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> mrrfAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/mrrfXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -137,10 +137,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Saldo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Saldo(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Saldo(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Saldo", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SaldoAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SaldoAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/NewsInfoXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -158,10 +158,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/XVol", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement XVol(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement XVol(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/XVol", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> XVolAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> XVolAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/XVolXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -186,17 +186,17 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/NewsInfo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement NewsInfo(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement NewsInfo(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/NewsInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> NewsInfoAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> NewsInfoAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapDayTotal", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement SwapDayTotal(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapDayTotal(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapDayTotal", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapDayTotalAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapDayTotalAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapDayTotalXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -221,17 +221,17 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapInfoSellUSDVol", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement SwapInfoSellUSDVol(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapInfoSellUSDVol(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapInfoSellUSDVol", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapInfoSellUSDVolAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapInfoSellUSDVolAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapInfoSellUSD", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement SwapInfoSellUSD(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapInfoSellUSD(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapInfoSellUSD", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapInfoSellUSDAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapInfoSellUSDAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapInfoSellUSDXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -249,10 +249,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BiCurBase", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement BiCurBase(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement BiCurBase(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BiCurBase", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BiCurBaseAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BiCurBaseAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BiCurBacketXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -263,24 +263,24 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BiCurBacket", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement BiCurBacket();
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement BiCurBacket();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BiCurBacket", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BiCurBacketAsync();
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BiCurBacketAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement SwapDynamic(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapDynamic(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapMonthTotal", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement SwapMonthTotal(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapMonthTotal(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapMonthTotal", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapMonthTotalAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapMonthTotalAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/SwapMonthTotalXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -291,10 +291,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/MKR", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement MKR(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement MKR(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/MKR", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> MKRAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> MKRAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/MKRXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -305,10 +305,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/KeyRate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement KeyRate(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement KeyRate(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/KeyRate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> KeyRateAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> KeyRateAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/KeyRateXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -319,10 +319,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DV", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement DV(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DV(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DV", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DVAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DVAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DVXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -333,10 +333,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Repo_debt", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Repo_debt(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Repo_debt(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Repo_debt", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> Repo_debtAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> Repo_debtAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Repo_debtXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -347,10 +347,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Coins_base", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Coins_base(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Coins_base(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Coins_base", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> Coins_baseAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> Coins_baseAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Coins_baseXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -361,10 +361,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/FixingBase", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement FixingBase(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement FixingBase(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/FixingBase", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> FixingBaseAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> FixingBaseAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/FixingBaseXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -375,10 +375,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Overnight", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Overnight(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Overnight(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Overnight", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OvernightAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OvernightAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OvernightXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -389,10 +389,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Bauction", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement Bauction(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Bauction(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/Bauction", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BauctionAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BauctionAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/BauctionXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -410,10 +410,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DepoDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement DepoDynamic(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DepoDynamic(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DepoDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DepoDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DepoDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OstatDynamicXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -424,10 +424,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OstatDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement OstatDynamic(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement OstatDynamic(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/OstatDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OstatDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OstatDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DragMetDynamicXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -438,10 +438,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DragMetDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement DragMetDynamic(System.DateTime fromDate, System.DateTime ToDate);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DragMetDynamic(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/DragMetDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DragMetDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DragMetDynamicAsync(System.DateTime fromDate, System.DateTime ToDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetLatestDateTime", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -480,10 +480,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/EnumValutes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement EnumValutes(bool Seld);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement EnumValutes(bool Seld);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/EnumValutes", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> EnumValutesAsync(bool Seld);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> EnumValutesAsync(bool Seld);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetLatestReutersDateTime", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -501,10 +501,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/EnumReutersValutes", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement EnumReutersValutes();
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement EnumReutersValutes();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/EnumReutersValutes", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> EnumReutersValutesAsync();
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> EnumReutersValutesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursOnDateXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -515,10 +515,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursOnDate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement GetReutersCursOnDate(System.DateTime On_date);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetReutersCursOnDate(System.DateTime On_date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursOnDate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetReutersCursOnDateAsync(System.DateTime On_date);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetReutersCursOnDateAsync(System.DateTime On_date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursDynamicXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -529,10 +529,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement GetReutersCursDynamic(System.DateTime FromDate, System.DateTime ToDate, int NumCode);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetReutersCursDynamic(System.DateTime FromDate, System.DateTime ToDate, int NumCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetReutersCursDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetReutersCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, int NumCode);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetReutersCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, int NumCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursDynamicXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -543,10 +543,10 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursDynamic", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement GetCursDynamic(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetCursDynamic(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursDynamic", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursOnDateXML", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -564,27 +564,27 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetSeldCursOnDate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement GetSeldCursOnDate(System.DateTime On_date);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetSeldCursOnDate(System.DateTime On_date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetSeldCursOnDate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetSeldCursOnDateAsync(System.DateTime On_date);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetSeldCursOnDateAsync(System.DateTime On_date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursOnDate", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.ArrayOfXElement GetCursOnDate(System.DateTime On_date);
+        TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetCursOnDate(System.DateTime On_date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://web.cbr.ru/GetCursOnDate", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetCursOnDateAsync(System.DateTime On_date);
+        System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetCursOnDateAsync(System.DateTime On_date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    internal interface DailyInfoSoapChannel : ServiceReference1.DailyInfoSoap, System.ServiceModel.IClientChannel
+    public interface DailyInfoSoapChannel : TaskService.Plugin.CBRTasks.Api.DailyInfoSoap, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    internal partial class DailyInfoSoapClient : System.ServiceModel.ClientBase<ServiceReference1.DailyInfoSoap>, ServiceReference1.DailyInfoSoap
+    public partial class DailyInfoSoapClient : System.ServiceModel.ClientBase<TaskService.Plugin.CBRTasks.Api.DailyInfoSoap>, TaskService.Plugin.CBRTasks.Api.DailyInfoSoap
     {
         
         /// <summary>
@@ -670,52 +670,52 @@ namespace ServiceReference1
             return base.Channel.ValIntDayXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement ValIntDay(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement ValIntDay(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.ValIntDay(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> ValIntDayAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> ValIntDayAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.ValIntDayAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement OstatDepo(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement OstatDepo(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.OstatDepo(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OstatDepoAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OstatDepoAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.OstatDepoAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement ROISfix(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement ROISfix(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.ROISfix(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> ROISfixAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> ROISfixAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.ROISfixAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Ruonia(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Ruonia(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Ruonia(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RuoniaAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RuoniaAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.RuoniaAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement RuoniaSV(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement RuoniaSV(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.RuoniaSV(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RuoniaSVAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RuoniaSVAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.RuoniaSVAsync(fromDate, ToDate);
         }
@@ -730,12 +730,12 @@ namespace ServiceReference1
             return base.Channel.RuoniaSVXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement mrrf7D(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement mrrf7D(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.mrrf7D(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> mrrf7DAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> mrrf7DAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.mrrf7DAsync(fromDate, ToDate);
         }
@@ -750,12 +750,12 @@ namespace ServiceReference1
             return base.Channel.mrrf7DXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement RepoDebtUSD(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement RepoDebtUSD(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.RepoDebtUSD(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> RepoDebtUSDAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> RepoDebtUSDAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.RepoDebtUSDAsync(fromDate, ToDate);
         }
@@ -770,12 +770,12 @@ namespace ServiceReference1
             return base.Channel.RepoDebtUSDXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement mrrf(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement mrrf(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.mrrf(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> mrrfAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> mrrfAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.mrrfAsync(fromDate, ToDate);
         }
@@ -790,12 +790,12 @@ namespace ServiceReference1
             return base.Channel.mrrfXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Saldo(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Saldo(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Saldo(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SaldoAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SaldoAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SaldoAsync(fromDate, ToDate);
         }
@@ -820,12 +820,12 @@ namespace ServiceReference1
             return base.Channel.OmodInfoXMLAsync();
         }
         
-        public ServiceReference1.ArrayOfXElement XVol(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement XVol(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.XVol(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> XVolAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> XVolAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.XVolAsync(fromDate, ToDate);
         }
@@ -860,22 +860,22 @@ namespace ServiceReference1
             return base.Channel.AllDataInfoXMLAsync();
         }
         
-        public ServiceReference1.ArrayOfXElement NewsInfo(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement NewsInfo(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.NewsInfo(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> NewsInfoAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> NewsInfoAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.NewsInfoAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement SwapDayTotal(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapDayTotal(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapDayTotal(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapDayTotalAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapDayTotalAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapDayTotalAsync(fromDate, ToDate);
         }
@@ -910,22 +910,22 @@ namespace ServiceReference1
             return base.Channel.SwapInfoSellUSDVolXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement SwapInfoSellUSDVol(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapInfoSellUSDVol(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapInfoSellUSDVol(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapInfoSellUSDVolAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapInfoSellUSDVolAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapInfoSellUSDVolAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement SwapInfoSellUSD(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapInfoSellUSD(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapInfoSellUSD(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapInfoSellUSDAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapInfoSellUSDAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapInfoSellUSDAsync(fromDate, ToDate);
         }
@@ -950,12 +950,12 @@ namespace ServiceReference1
             return base.Channel.BiCurBaseXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement BiCurBase(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement BiCurBase(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.BiCurBase(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BiCurBaseAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BiCurBaseAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.BiCurBaseAsync(fromDate, ToDate);
         }
@@ -970,32 +970,32 @@ namespace ServiceReference1
             return base.Channel.BiCurBacketXMLAsync();
         }
         
-        public ServiceReference1.ArrayOfXElement BiCurBacket()
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement BiCurBacket()
         {
             return base.Channel.BiCurBacket();
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BiCurBacketAsync()
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BiCurBacketAsync()
         {
             return base.Channel.BiCurBacketAsync();
         }
         
-        public ServiceReference1.ArrayOfXElement SwapDynamic(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapDynamic(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapDynamic(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapDynamicAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement SwapMonthTotal(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement SwapMonthTotal(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapMonthTotal(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> SwapMonthTotalAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> SwapMonthTotalAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.SwapMonthTotalAsync(fromDate, ToDate);
         }
@@ -1010,12 +1010,12 @@ namespace ServiceReference1
             return base.Channel.SwapMonthTotalXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement MKR(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement MKR(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.MKR(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> MKRAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> MKRAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.MKRAsync(fromDate, ToDate);
         }
@@ -1030,12 +1030,12 @@ namespace ServiceReference1
             return base.Channel.MKRXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement KeyRate(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement KeyRate(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.KeyRate(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> KeyRateAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> KeyRateAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.KeyRateAsync(fromDate, ToDate);
         }
@@ -1050,12 +1050,12 @@ namespace ServiceReference1
             return base.Channel.KeyRateXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement DV(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DV(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DV(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DVAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DVAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DVAsync(fromDate, ToDate);
         }
@@ -1070,12 +1070,12 @@ namespace ServiceReference1
             return base.Channel.DVXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Repo_debt(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Repo_debt(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Repo_debt(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> Repo_debtAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> Repo_debtAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Repo_debtAsync(fromDate, ToDate);
         }
@@ -1090,12 +1090,12 @@ namespace ServiceReference1
             return base.Channel.Repo_debtXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Coins_base(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Coins_base(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Coins_base(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> Coins_baseAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> Coins_baseAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Coins_baseAsync(fromDate, ToDate);
         }
@@ -1110,12 +1110,12 @@ namespace ServiceReference1
             return base.Channel.Coins_baseXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement FixingBase(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement FixingBase(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.FixingBase(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> FixingBaseAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> FixingBaseAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.FixingBaseAsync(fromDate, ToDate);
         }
@@ -1130,12 +1130,12 @@ namespace ServiceReference1
             return base.Channel.FixingBaseXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Overnight(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Overnight(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Overnight(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OvernightAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OvernightAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.OvernightAsync(fromDate, ToDate);
         }
@@ -1150,12 +1150,12 @@ namespace ServiceReference1
             return base.Channel.OvernightXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement Bauction(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement Bauction(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.Bauction(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> BauctionAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> BauctionAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.BauctionAsync(fromDate, ToDate);
         }
@@ -1180,12 +1180,12 @@ namespace ServiceReference1
             return base.Channel.DepoDynamicXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement DepoDynamic(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DepoDynamic(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DepoDynamic(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DepoDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DepoDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DepoDynamicAsync(fromDate, ToDate);
         }
@@ -1200,12 +1200,12 @@ namespace ServiceReference1
             return base.Channel.OstatDynamicXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement OstatDynamic(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement OstatDynamic(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.OstatDynamic(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> OstatDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> OstatDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.OstatDynamicAsync(fromDate, ToDate);
         }
@@ -1220,12 +1220,12 @@ namespace ServiceReference1
             return base.Channel.DragMetDynamicXMLAsync(fromDate, ToDate);
         }
         
-        public ServiceReference1.ArrayOfXElement DragMetDynamic(System.DateTime fromDate, System.DateTime ToDate)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement DragMetDynamic(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DragMetDynamic(fromDate, ToDate);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> DragMetDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> DragMetDynamicAsync(System.DateTime fromDate, System.DateTime ToDate)
         {
             return base.Channel.DragMetDynamicAsync(fromDate, ToDate);
         }
@@ -1280,12 +1280,12 @@ namespace ServiceReference1
             return base.Channel.EnumValutesXMLAsync(Seld);
         }
         
-        public ServiceReference1.ArrayOfXElement EnumValutes(bool Seld)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement EnumValutes(bool Seld)
         {
             return base.Channel.EnumValutes(Seld);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> EnumValutesAsync(bool Seld)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> EnumValutesAsync(bool Seld)
         {
             return base.Channel.EnumValutesAsync(Seld);
         }
@@ -1310,12 +1310,12 @@ namespace ServiceReference1
             return base.Channel.EnumReutersValutesXMLAsync();
         }
         
-        public ServiceReference1.ArrayOfXElement EnumReutersValutes()
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement EnumReutersValutes()
         {
             return base.Channel.EnumReutersValutes();
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> EnumReutersValutesAsync()
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> EnumReutersValutesAsync()
         {
             return base.Channel.EnumReutersValutesAsync();
         }
@@ -1330,12 +1330,12 @@ namespace ServiceReference1
             return base.Channel.GetReutersCursOnDateXMLAsync(On_date);
         }
         
-        public ServiceReference1.ArrayOfXElement GetReutersCursOnDate(System.DateTime On_date)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetReutersCursOnDate(System.DateTime On_date)
         {
             return base.Channel.GetReutersCursOnDate(On_date);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetReutersCursOnDateAsync(System.DateTime On_date)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetReutersCursOnDateAsync(System.DateTime On_date)
         {
             return base.Channel.GetReutersCursOnDateAsync(On_date);
         }
@@ -1350,12 +1350,12 @@ namespace ServiceReference1
             return base.Channel.GetReutersCursDynamicXMLAsync(FromDate, ToDate, NumCode);
         }
         
-        public ServiceReference1.ArrayOfXElement GetReutersCursDynamic(System.DateTime FromDate, System.DateTime ToDate, int NumCode)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetReutersCursDynamic(System.DateTime FromDate, System.DateTime ToDate, int NumCode)
         {
             return base.Channel.GetReutersCursDynamic(FromDate, ToDate, NumCode);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetReutersCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, int NumCode)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetReutersCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, int NumCode)
         {
             return base.Channel.GetReutersCursDynamicAsync(FromDate, ToDate, NumCode);
         }
@@ -1370,12 +1370,12 @@ namespace ServiceReference1
             return base.Channel.GetCursDynamicXMLAsync(FromDate, ToDate, ValutaCode);
         }
         
-        public ServiceReference1.ArrayOfXElement GetCursDynamic(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetCursDynamic(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode)
         {
             return base.Channel.GetCursDynamic(FromDate, ToDate, ValutaCode);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetCursDynamicAsync(System.DateTime FromDate, System.DateTime ToDate, string ValutaCode)
         {
             return base.Channel.GetCursDynamicAsync(FromDate, ToDate, ValutaCode);
         }
@@ -1400,22 +1400,22 @@ namespace ServiceReference1
             return base.Channel.GetSeldCursOnDateXMLAsync(On_date);
         }
         
-        public ServiceReference1.ArrayOfXElement GetSeldCursOnDate(System.DateTime On_date)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetSeldCursOnDate(System.DateTime On_date)
         {
             return base.Channel.GetSeldCursOnDate(On_date);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetSeldCursOnDateAsync(System.DateTime On_date)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetSeldCursOnDateAsync(System.DateTime On_date)
         {
             return base.Channel.GetSeldCursOnDateAsync(On_date);
         }
         
-        public ServiceReference1.ArrayOfXElement GetCursOnDate(System.DateTime On_date)
+        public TaskService.Plugin.CBRTasks.Api.ArrayOfXElement GetCursOnDate(System.DateTime On_date)
         {
             return base.Channel.GetCursOnDate(On_date);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference1.ArrayOfXElement> GetCursOnDateAsync(System.DateTime On_date)
+        public System.Threading.Tasks.Task<TaskService.Plugin.CBRTasks.Api.ArrayOfXElement> GetCursOnDateAsync(System.DateTime On_date)
         {
             return base.Channel.GetCursOnDateAsync(On_date);
         }
@@ -1481,7 +1481,7 @@ namespace ServiceReference1
     
     [System.Xml.Serialization.XmlSchemaProviderAttribute(null, IsAny=true)]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil-lib", "2.0.3.0")]
-    internal partial class ArrayOfXElement : object, System.Xml.Serialization.IXmlSerializable
+    public partial class ArrayOfXElement : object, System.Xml.Serialization.IXmlSerializable
     {
         
         private System.Collections.Generic.List<System.Xml.Linq.XElement> nodesList = new System.Collections.Generic.List<System.Xml.Linq.XElement>();

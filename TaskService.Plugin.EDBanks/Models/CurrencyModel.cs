@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace TaskService.Plugin.CBRTasks.Models
 {
-    internal class CurrencyModel
+    public class CurrencyModel
     {
+        public string Name { get; set; }
+
+        public decimal Curs { get; set; }
+
+        public int Code { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }

@@ -12,10 +12,13 @@ BEGIN
 		,TaskStartTime
 		,TaskEndTime
 		,FilePath
+		,Url
 		,FieldsCount
 		,FieldsSeparator
 		,Params
 		,ManualStart
 	FROM
 		[dbo].[ServiceTasks]
+	WHERE
+		AuthoriziedBy IS NOT NULL OR AuthoriziedBy <> ''
 END

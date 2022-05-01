@@ -12,15 +12,15 @@ namespace TaskService.Plugin.EDBanks
 
         public TaskResult Execute(CancellationToken token, ILogger logger)
         {
+            if (token.IsCancellationRequested)
+                return new TaskResult(true);
+
             logger.LogInformation($"Start working - {Name}");
             var taskResult = new TaskResult();
 
             try
             {
                 
-                // Create data table
-                // Prepare column mapping
-                // Bulk insert
             }
             catch (Exception ex)
             {

@@ -59,6 +59,22 @@ namespace TaskService.CommonTypes.Sql
             }
         }
 
+        public static void ExecuteSqlNonQuery(string sql, DynamicParameters? param = null)
+        {
+            using (IDbConnection conn = new SqlConnection(_connString))
+            {
+                conn.Open();
+                conn.Execute(
+                    sql: sql,
+                    param: param,
+                    commandType: CommandType.Text,
+                    commandTimeout: _commandTimeout);
+            }
+        }
+
+        public static void ClearTable(string tableName) => ExecuteSqlNonQuery($"DELETE FROM {tableName}");
+        
+
         public static DataTable CreateDataTable<T>(IEnumerable<T> list)
         {
             Type type = typeof(T);
@@ -85,7 +101,7 @@ namespace TaskService.CommonTypes.Sql
             return dataTable;
         }
 
-        public static ICollection<SqlBulkCopyColumnMapping> PrepareColumnMapping(DataTable table)
+        public static List<SqlBulkCopyColumnMapping> PrepareColumnMapping(DataTable table)
         {
             if (table is null)
                 throw new ArgumentNullException(nameof(table));

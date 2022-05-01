@@ -21,3 +21,19 @@ GO
 
 SET IDENTITY_INSERT [dbBankGM].[dbo].[Users] OFF
 GO
+
+-- Task CBR
+INSERT INTO dbo.ServiceTasks 
+    (TaskID, [IsEnabled],[TaskType],[Branch],
+     [TaskName],[LastWorkTime],[TaskStartTime],
+     [TaskEndTime],[Dependency],[FilePath],
+     [FieldsCount],[FieldsSeparator],[Params],
+     [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart])
+VALUES
+    (0, 1, 1, 0,
+     'CurrentCBRRates', null, '2022-05-01 01:00:00',
+     '2022-05-01 23:59:00', '', null,
+     null, null, null,
+     'Andrej', 'Andrej', 'CBR Rates', 0)
+
+

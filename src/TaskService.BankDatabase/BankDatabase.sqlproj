@@ -100,5 +100,6 @@
     <Build Include="Tables\Users.sql" />
     <Build Include="Tables\Reports.sql" />
     <Build Include="Tables\ServiceLogs.sql" />
+    <Build Include="Tables\RatesCB.sql" />
   </ItemGroup>
 </Project>

@@ -11,6 +11,10 @@ namespace TaskService.CommonTypes.Classes
     /// </summary>
     public class TaskResult
     {
+        public TaskResult() { }
+
+        public TaskResult(bool cancelled) { IsCancelled = cancelled; }
+
         public ICollection<TaskWarning> taskWarnings { get; set; } = new List<TaskWarning>();
 
         public void AddWarning(string message, bool IsCritical, int? recordId = null)
@@ -21,6 +25,8 @@ namespace TaskService.CommonTypes.Classes
                 Message = recordId.HasValue ? string.Join('.', recordId, message) : message,
             });
         }
+
+        public bool IsCancelled { get; set; }
 
         public bool IsError => taskWarnings.Any(x => x.IsCritical);
     }
