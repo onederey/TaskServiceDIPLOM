@@ -15,11 +15,11 @@ namespace TaskService.CommonTypes.Classes
 
         public TaskResult(bool cancelled) { IsCancelled = cancelled; }
 
-        public ICollection<TaskWarning> taskWarnings { get; set; } = new List<TaskWarning>();
+        public ICollection<TaskWarning> TaskWarnings { get; set; } = new List<TaskWarning>();
 
         public void AddWarning(string message, bool IsCritical, int? recordId = null)
         {
-            taskWarnings.Add(new TaskWarning
+            TaskWarnings.Add(new TaskWarning
             {
                 IsCritical = IsCritical,
                 Message = recordId.HasValue ? string.Join('.', recordId, message) : message,
@@ -28,6 +28,8 @@ namespace TaskService.CommonTypes.Classes
 
         public bool IsCancelled { get; set; }
 
-        public bool IsError => taskWarnings.Any(x => x.IsCritical);
+        public bool IsError => TaskWarnings.Any(x => x.IsCritical);
+
+        public int AffectedRows { get; set; }
     }
 }

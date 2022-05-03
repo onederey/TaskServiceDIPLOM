@@ -2,6 +2,7 @@
 using Moq;
 using NUnit.Framework;
 using System;
+using System.Text;
 using System.Threading;
 using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Interfaces;
@@ -25,6 +26,8 @@ namespace TaskService.UnitTests.CBRTasks
             _loggerMock = new Mock<ILogger>();
             _token = new CancellationToken();
             _task = new RatesTask();
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
         [Test]
@@ -43,6 +46,9 @@ namespace TaskService.UnitTests.CBRTasks
                 FilePath = AppDomain.CurrentDomain.BaseDirectory,
                 FileMask = "*_ED807_full.xml"
             };
+
+            // add rates hist task to copy rates into rates hist table
+            // add api for interface in data manager
 
             _task.Execute(_token, _loggerMock.Object);
         }

@@ -17,6 +17,7 @@ BEGIN
 		,FieldsCount
 		,FieldsSeparator
 		,Params
+		,SpName
 		,ManualStart
 	FROM
 		[dbo].[ServiceTasks]

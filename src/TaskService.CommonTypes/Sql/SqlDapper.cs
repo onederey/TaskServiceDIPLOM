@@ -1,12 +1,7 @@
 ﻿using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TaskService.CommonTypes.Sql
 {
@@ -46,12 +41,12 @@ namespace TaskService.CommonTypes.Sql
             }
         }
 
-        public static void ExecuteNonQuerySP<T>(string sp, DynamicParameters? param = null)
+        public static void ExecuteNonQuerySP(string sp, DynamicParameters? param = null)
         {
             using (IDbConnection conn = new SqlConnection(_connString))
             {
                 conn.Open();
-                conn.Query<T>(
+                conn.Query(
                     sql: sp,
                     param: param,
                     commandType: CommandType.StoredProcedure,
@@ -59,7 +54,7 @@ namespace TaskService.CommonTypes.Sql
             }
         }
 
-        public static void ExecuteSqlNonQuery(string sql, DynamicParameters? param = null)
+        public static void ExecuteSqlNonQuery(string sql, object? param = null)
         {
             using (IDbConnection conn = new SqlConnection(_connString))
             {

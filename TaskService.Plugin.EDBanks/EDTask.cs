@@ -3,6 +3,8 @@ using System.Xml;
 using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Helpers;
 using TaskService.CommonTypes.Interfaces;
+using TaskService.Plugin.CBRTasks.DataManager;
+using TaskService.Plugin.CBRTasks.Mappers;
 using TaskService.Plugin.EDBanks.Models;
 
 namespace TaskService.Plugin.CBRTasks
@@ -12,6 +14,10 @@ namespace TaskService.Plugin.CBRTasks
         public string Name => "EDBanks";
 
         public TaskDTO ServiceTask { get; set; }
+
+        private EDMapper _mapper = new EDMapper();
+
+        private EDDataManager _dataManager = new EDDataManager();
 
         public TaskResult Execute(CancellationToken token, ILogger logger)
         {
@@ -35,6 +41,30 @@ namespace TaskService.Plugin.CBRTasks
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(fileName);
                 XmlElement? xRoot = xDoc.DocumentElement;
+
+                if (xRoot != null)
+                {
+                    var businessDay = ParseBusinessDay(xRoot.Attributes?.GetNamedItem("BusinessDay")?.Value);
+
+                    foreach (XmlElement xnode in xRoot)
+                    {
+                        modelBuffer.Add(_mapper.Map(xnode, businessDay));
+
+                        if(modelBuffer.Count >= maxBufferCount)
+                        {
+                            _dataManager.InsertIntoTemp(modelBuffer.ToArray());
+                            modelBuffer.Clear();
+                        }
+                    }
+
+                    if(modelBuffer.Any())
+                    {
+                        _dataManager.InsertIntoTemp(modelBuffer.ToArray());
+                        modelBuffer.Clear();
+                    }
+
+                    _dataManager.ImportFromTemp();
+                }
             }
             catch (Exception ex)
             {
@@ -62,6 +92,14 @@ namespace TaskService.Plugin.CBRTasks
 
             if (string.IsNullOrEmpty(filePath))
                 throw new ApplicationException($"Error on getting file - {fileName}");
+        }
+
+        private DateTime ParseBusinessDay(string date)
+        {
+            if (DateTime.TryParse(date, out var result))
+                return result;
+
+            return DateTime.Now;
         }
     }
 }

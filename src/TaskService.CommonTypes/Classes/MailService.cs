@@ -9,6 +9,19 @@ namespace TaskService.CommonTypes.Classes
 {
     public class MailService : IMailService
     {
+        public void InitMailService()
+        {
 
+        }
+
+        public void SendMail(string taskName, int taskId, ICollection<TaskWarning> taskWarnings)
+        {
+
+        }
+
+        private string GetMessage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

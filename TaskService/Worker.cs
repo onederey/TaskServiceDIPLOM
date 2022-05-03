@@ -1,5 +1,7 @@
 using System.Text.RegularExpressions;
+using TaskService.API.Interfaces;
 using TaskService.CommonTypes.Classes;
+using TaskService.CommonTypes.Enums;
 using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 using TaskService.Interfaces;
@@ -11,16 +13,19 @@ namespace TaskService
         private readonly ILogger<Worker> _logger;
         private readonly IPluginService _pluginService;
         private readonly IMailService _mailService;
+        private readonly ITaskDataManager _taskDataManager;
 
         private ICollection<ITask> _plugins;
 
-        public Worker(ILogger<Worker> logger, IPluginService pluginService, IMailService mailService)
+        public Worker(ILogger<Worker> logger, IPluginService pluginService, IMailService mailService, ITaskDataManager taskDataManager)
         {
             _logger = logger;
             _pluginService = pluginService;
             _mailService = mailService;
+            _taskDataManager = taskDataManager;
         }
 
+        #region entry point
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             Thread pluginListener = new Thread(() => _pluginService.StartPluginListener(stoppingToken));
@@ -42,13 +47,10 @@ namespace TaskService
                             {
                                 _logger.LogInformation($"Scheduler: executing task - {plugin.Name}");
 
+                                var stats = new ServiceStats();
                                 var result = plugin.Execute(stoppingToken, _logger);
 
-                                HandleResult(result);
-                            }
-                            else
-                            {
-                                _logger.LogInformation($"Scheduler: task dont need to work - {plugin.Name}");
+                                HandleResult(result, stats, plugin.ServiceTask);
                             }
                         });
                     }
@@ -60,6 +62,30 @@ namespace TaskService
 
                 await Task.Delay(TaskServiceConst.DelayForTasks, stoppingToken);
             }
+        }
+        #endregion
+
+        #region private methods  
+        private void HandleResult(TaskResult result, ServiceStats stats, TaskDTO task)
+        {
+            var dateStamp = DateTime.Now;
+
+            stats.ProcessID = result.IsCancelled ? ProcessID.Cancelled
+                : result.IsError ? ProcessID.Error
+                    : result.TaskWarnings.Count > 0 ? ProcessID.Warning
+                        : ProcessID.OK;
+            stats.TaskEndTime = dateStamp;
+            stats.WarningCount = result.TaskWarnings.Count(x => !x.IsCritical);
+            stats.ErrorCount = result.TaskWarnings.Count(x => x.IsCritical);
+            stats.TaskID = task.TaskID;
+            stats.AffectedRows = result.AffectedRows;
+
+            if (stats.ProcessID == ProcessID.OK || stats.ProcessID == ProcessID.Warning)
+                _taskDataManager.SetLastWorkTime(dateStamp, task.TaskID);
+            else
+                _mailService.SendMail(task.TaskName, task.TaskID, result.TaskWarnings);
+
+            _taskDataManager.InsertStats(stats);
         }
 
         private bool IsNeedToWork(ITask task)
@@ -92,11 +118,6 @@ namespace TaskService
             return true;
         }
 
-        private void HandleResult(TaskResult result)
-        {
-            // send mails, mark task last work date .... etc
-        }
-
         private bool IsDependenciesResolved(string depends, out string resolveIt)
         {
             resolveIt = string.Empty;
@@ -123,7 +144,7 @@ namespace TaskService
 
         private ICollection<ITask> GetMappedPlugins(ICollection<ITask> plugins)
         {
-            var tasks = SqlDapper.ExecuteQuerySP<TaskDTO>("[dbo].[Service_GetAllTasks]");
+            var tasks = _taskDataManager.GetTasks();
 
             foreach(var plugin in plugins)
             {
@@ -137,5 +158,6 @@ namespace TaskService
 
             return plugins;
         }
+        #endregion
     }
 }

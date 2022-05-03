@@ -14,6 +14,7 @@
     [FieldsCount]     INT            NULL,
     [FieldsSeparator] NVARCHAR (5)   NULL,
     [Params]          NVARCHAR(300)  NULL,
+    SpName            NVARCHAR(100)  NULL,
     [ModifiedBy]      NVARCHAR (50)  NOT NULL,
     [AuthoriziedBy]   NVARCHAR (50)  NOT NULL,
     [Description]     NVARCHAR (250) NULL,

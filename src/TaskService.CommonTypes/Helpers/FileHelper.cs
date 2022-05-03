@@ -32,7 +32,6 @@ namespace TaskService.CommonTypes.Helpers
             {
                 return false;
             }
-
         }
 
         /// <summary>
