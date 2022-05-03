@@ -29,6 +29,8 @@ namespace TaskService.CommonTypes.Classes
 
 		public DateTime TaskEndTime { get; set; }
 
+		public string FileMask { get; set; }
+
 		public string FilePath { get; set; } = string.Empty;
 
 		public string Url { get; set; } = string.Empty;

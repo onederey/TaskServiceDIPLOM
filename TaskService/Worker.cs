@@ -38,9 +38,6 @@ namespace TaskService
                     {
                         Parallel.ForEach(_plugins, plugin =>
                         {
-                            // [TODO]:
-                            // Add auto-copy of plugin into build directory or project ! (only for my comfort)
-
                             if (IsNeedToWork(plugin))
                             {
                                 _logger.LogInformation($"Scheduler: executing task - {plugin.Name}");

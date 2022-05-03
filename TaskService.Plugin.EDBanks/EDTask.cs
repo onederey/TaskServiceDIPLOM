@@ -1,8 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Xml;
 using TaskService.CommonTypes.Classes;
+using TaskService.CommonTypes.Helpers;
 using TaskService.CommonTypes.Interfaces;
+using TaskService.Plugin.EDBanks.Models;
 
-namespace TaskService.Plugin.EDBanks
+namespace TaskService.Plugin.CBRTasks
 {
     public class EDTask : ITask
     {
@@ -18,18 +21,47 @@ namespace TaskService.Plugin.EDBanks
             logger.LogInformation($"Start working - {Name}");
             var taskResult = new TaskResult();
 
+            var date = DateTime.Now.Date;
+            var fileName = $"ED807_{date.Day}_{date.Month}_{date.Year}.zip";
+
+            var modelBuffer = new List<EDBanksModel>();
+            var maxBufferCount = 500;
+
             try
             {
-                
+                GetFile(fileName);
+                fileName = FileHelper.GetFileByMask(ServiceTask.FilePath, ServiceTask.FileMask);
+
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(fileName);
+                XmlElement? xRoot = xDoc.DocumentElement;
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, $"Error while processing - {Name}");
-                taskResult.AddWarning($"Error while processing - {Name}", true);
+                logger.LogError(ex, $"Error while processing - {Name}; Exception - {ex.Message}");
+                taskResult.AddWarning($"Error while processing - {Name}; Exception - {ex.Message}", true);
             }
 
             logger.LogInformation($"End working - {Name}");
             return taskResult;
+        }
+
+        private void GetFile(string fileName)
+        {
+            var isDownloadSuccess = FileHelper.DownloadAndSaveFile(ServiceTask.Url, Path.Combine(ServiceTask.FilePath, fileName));
+
+            if (!isDownloadSuccess)
+                throw new ApplicationException($"Error on file downloading from - {ServiceTask.Url}");
+
+            var isUnZipSuccess = FileHelper.UnZipFile(Path.Combine(ServiceTask.FilePath, fileName), ServiceTask.FilePath);
+
+            if (!isUnZipSuccess)
+                throw new ApplicationException($"Error on file UnZipping - {fileName}");
+
+            var filePath = FileHelper.GetFileByMask(ServiceTask.FilePath, ServiceTask.FileMask);
+
+            if (string.IsNullOrEmpty(filePath))
+                throw new ApplicationException($"Error on getting file - {fileName}");
         }
     }
 }

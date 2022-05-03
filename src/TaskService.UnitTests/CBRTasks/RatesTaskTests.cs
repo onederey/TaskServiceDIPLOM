@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
+using System;
 using System.Threading;
+using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 using TaskService.Plugin.CBRTasks;
@@ -28,6 +30,20 @@ namespace TaskService.UnitTests.CBRTasks
         [Test]
         public void Execute_ExpectedWork_NoSpecialParams()
         {
+            _task.Execute(_token, _loggerMock.Object);
+        }
+
+        [Test]
+        public void DebugTest()
+        {
+            _task = new EDTask(); //https://www.cbr.ru/s/newbik
+            _task.ServiceTask = new TaskDTO
+            {
+                Url = "https://www.cbr.ru/s/newbik",
+                FilePath = AppDomain.CurrentDomain.BaseDirectory,
+                FileMask = "*_ED807_full.xml"
+            };
+
             _task.Execute(_token, _loggerMock.Object);
         }
     }

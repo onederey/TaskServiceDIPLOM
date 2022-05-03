@@ -11,6 +11,7 @@ BEGIN
 		,LastWorkTime
 		,TaskStartTime
 		,TaskEndTime
+		,FileMask
 		,FilePath
 		,Url
 		,FieldsCount

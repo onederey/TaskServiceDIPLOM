@@ -11,8 +11,11 @@ namespace TaskService.CommonTypes.Helpers
         /// <summary>
         /// Requires path with fileName
         /// </summary>
-        public static bool DownloadAndFile(string url, string pathToSave)
+        public static bool DownloadAndSaveFile(string url, string pathToSave)
         {
+            if (File.Exists(pathToSave))
+                return true;
+
             try
             {
                 using (HttpClient client = new())
@@ -32,6 +35,30 @@ namespace TaskService.CommonTypes.Helpers
 
         }
 
+        /// <summary>
+        /// Get file by mask, if there are many, returns latest based on date...
+        /// </summary>
+        public static string GetFileByMask(string path, string fileName)
+        {
+            var files = Directory.GetFiles(path, fileName);
+
+            if(files.Length > 1)
+            {
+                files.ToList().Sort((first, second) =>
+                {
+                    var firstDate = File.GetCreationTime(first);
+                    var secDate = File.GetCreationTime(second);
+
+                    return DateTime.Compare(firstDate, secDate);
+                });
+            }
+
+            return files.FirstOrDefault();
+        }
+
+        /// <summary>
+        /// UnZip File
+        /// </summary>
         public static bool UnZipFile(string filePath, string extractPath)
         {
             int retries = 0;
@@ -42,7 +69,7 @@ namespace TaskService.CommonTypes.Helpers
 
                 try
                 {
-                    ZipFile.ExtractToDirectory(filePath, extractPath);
+                    ZipFile.ExtractToDirectory(filePath, extractPath, true);
                     return true;
 
                 }

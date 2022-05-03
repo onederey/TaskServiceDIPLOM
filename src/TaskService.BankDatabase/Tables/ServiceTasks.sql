@@ -8,6 +8,7 @@
     [TaskStartTime]   DATETIME       NOT NULL,
     [TaskEndTime]     DATETIME       NOT NULL,
     [Dependency]      NVARCHAR (100) NOT NULL,
+    [FileMask]        NVARCHAR (30)     null,
     [FilePath]        NVARCHAR (50)  NULL,
     [Url]             NVARCHAR (50)  NULL,
     [FieldsCount]     INT            NULL,
