@@ -105,5 +105,6 @@
     <Build Include="Tables\ServiceStats.sql" />
     <Build Include="Stored Procedures\Service_SetAsWorked.sql" />
     <Build Include="Stored Procedures\Service_GetStats.sql" />
+    <Build Include="Tables\Service_MailSettings.sql" />
   </ItemGroup>
 </Project>
