@@ -103,5 +103,7 @@
     <Build Include="Tables\RatesCB.sql" />
     <Build Include="Tables\BIC_Dictionary.sql" />
     <Build Include="Tables\ServiceStats.sql" />
+    <Build Include="Stored Procedures\Service_SetAsWorked.sql" />
+    <Build Include="Stored Procedures\Service_GetStats.sql" />
   </ItemGroup>
 </Project>

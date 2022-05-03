@@ -46,7 +46,7 @@ namespace TaskService.API.DataManagers
             var param = new DynamicParameters();
 
             param.Add(
-                name: "@date",
+                name: "@Date",
                 value: date,
                 dbType: System.Data.DbType.DateTime,
                 direction: System.Data.ParameterDirection.Input);
