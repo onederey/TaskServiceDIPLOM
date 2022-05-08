@@ -77,7 +77,6 @@
     <Build Include="Tables\Account.sql" />
     <Build Include="Tables\LoginAccount.sql" />
     <Build Include="Tables\Customer.sql" />
-    <Build Include="Tables\CustomerAccount.sql" />
     <Build Include="Tables\TransactionLog.sql" />
     <Build Include="Tables\OverDraftLog.sql" />
     <Build Include="Tables\TaskTypes.sql" />
@@ -95,7 +94,7 @@
     <Build Include="Stored Procedures\sp_Delete_Errors.sql" />
     <Build Include="Stored Procedures\sp_Remove_Column.sql" />
     <Build Include="Stored Procedures\Service_GetAllTasks.sql" />
-    <Build Include="Tables\LogUser.sql" />
+    <Build Include="Tables\Logs.sql" />
     <Build Include="Tables\Events.sql" />
     <Build Include="Tables\Users.sql" />
     <Build Include="Tables\Reports.sql" />
@@ -105,6 +104,6 @@
     <Build Include="Tables\ServiceStats.sql" />
     <Build Include="Stored Procedures\Service_SetAsWorked.sql" />
     <Build Include="Stored Procedures\Service_GetStats.sql" />
-    <Build Include="Tables\Service_MailSettings.sql" />
+    <Build Include="Tables\ServiceNotifications.sql" />
   </ItemGroup>
 </Project>
