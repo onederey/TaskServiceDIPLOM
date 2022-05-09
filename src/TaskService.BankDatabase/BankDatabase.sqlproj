@@ -59,7 +59,6 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables\" />
-    <Folder Include="Views\" />
     <Folder Include="Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
@@ -82,11 +81,7 @@
     <Build Include="Tables\TaskTypes.sql" />
     <Build Include="Tables\Branches.sql" />
     <Build Include="Tables\ServiceTasks.sql" />
-    <Build Include="Views\VW_Customer_ON.sql" />
-    <Build Include="Views\VW_Customer_ACC.sql" />
-    <Build Include="Views\VW_Customer_OD.sql" />
     <Build Include="Stored Procedures\sp_Update_Login.sql" />
-    <Build Include="Stored Procedures\sp_Customer_Details.sql" />
     <Build Include="Stored Procedures\sp_Errors_24.sql" />
     <Build Include="Stored Procedures\sp_Update_cBalance_After_Deposit.sql" />
     <Build Include="Stored Procedures\sp_Update_cBalance_After_Withdraw.sql" />
@@ -105,5 +100,6 @@
     <Build Include="Stored Procedures\Service_SetAsWorked.sql" />
     <Build Include="Stored Procedures\Service_GetStats.sql" />
     <Build Include="Tables\ServiceNotifications.sql" />
+    <Build Include="Stored Procedures\Service_GetMailSettings.sql" />
   </ItemGroup>
 </Project>

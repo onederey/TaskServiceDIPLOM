@@ -27,6 +27,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         TaskServiceConst.InitDelay(config.GetSection("Settings:Delay").Value);
 
         services
+        .AddSingleton<IMailServiceDataManager, MailServiceDataManager>()
             .AddSingleton<ITaskDataManager, TaskDataManager>()
             .AddSingleton<IMailService, MailService>()
             .AddSingleton<IPluginLoader, PluginLoader>()
@@ -41,8 +42,5 @@ IHost host = Host.CreateDefaultBuilder(args)
     .UseNLog()
     .UseWindowsService(x => x.ServiceName = "TaskService host")
     .Build();
-
-var mailService = host.Services.GetRequiredService<IMailService>();
-mailService.InitMailService();
 
 await host.RunAsync();

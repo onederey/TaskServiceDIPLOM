@@ -14,5 +14,10 @@ namespace TaskService.CommonTypes.Classes
         /// If IsCritical then it is error
         /// </summary>
         public bool IsCritical { get; set; }
+
+        public override string ToString()
+        {
+            return !IsCritical ? $"Warning: {Message}" : $"Error: {Message}";
+        }
     }
 }

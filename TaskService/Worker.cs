@@ -1,9 +1,7 @@
-using System.Text.RegularExpressions;
 using TaskService.API.Interfaces;
 using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Enums;
 using TaskService.CommonTypes.Interfaces;
-using TaskService.CommonTypes.Sql;
 using TaskService.Interfaces;
 
 namespace TaskService
@@ -26,6 +24,7 @@ namespace TaskService
         }
 
         #region entry point
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             Thread pluginListener = new Thread(() => _pluginService.StartPluginListener(stoppingToken));
@@ -35,6 +34,7 @@ namespace TaskService
             {
                 try
                 {
+                    _mailService.UpdateSettings();
                     _plugins = GetMappedPlugins(_pluginService.GetPlugins());
 
                     if (_plugins == null || _plugins?.Count == 0)

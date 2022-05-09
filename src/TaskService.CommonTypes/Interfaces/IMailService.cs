@@ -6,6 +6,6 @@ namespace TaskService.CommonTypes.Interfaces
     {
         void SendMail(string taskName, int taskId, ICollection<TaskWarning> taskWarnings);
 
-        void InitMailService();
+        void UpdateSettings();
     }
 }
