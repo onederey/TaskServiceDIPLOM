@@ -20,4 +20,8 @@
     <ProjectReference Include="..\TaskService.CommonTypes\TaskService.CommonTypes.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TestFiles\" />
+  </ItemGroup>
+
 </Project>

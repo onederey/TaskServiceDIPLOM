@@ -27,7 +27,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         TaskServiceConst.InitDelay(config.GetSection("Settings:Delay").Value);
 
         services
-        .AddSingleton<IMailServiceDataManager, MailServiceDataManager>()
+            .AddSingleton<IMailServiceDataManager, MailServiceDataManager>()
             .AddSingleton<ITaskDataManager, TaskDataManager>()
             .AddSingleton<IMailService, MailService>()
             .AddSingleton<IPluginLoader, PluginLoader>()

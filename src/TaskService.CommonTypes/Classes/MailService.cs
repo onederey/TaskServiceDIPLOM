@@ -21,6 +21,9 @@ namespace TaskService.CommonTypes.Classes
 
         public void SendMail(string taskName, int taskId, ICollection<TaskWarning> taskWarnings)
         {
+            if(_settings is null)
+                _settings = _dataManager.GetMailSettings();
+
             var message = GetMessage(taskName, taskId, taskWarnings);
 
             foreach (var settings in _settings)
@@ -31,7 +34,6 @@ namespace TaskService.CommonTypes.Classes
                 message.Subject = settings.Subject;
                 smtp.Port = 25;
                 smtp.Host = settings.SmtpHost;
-                // smtp.EnableSsl = true;
                 smtp.UseDefaultCredentials = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 

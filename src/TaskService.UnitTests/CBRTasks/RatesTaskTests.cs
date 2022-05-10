@@ -2,6 +2,9 @@
 using Moq;
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using TaskService.CommonTypes.Classes;
@@ -28,6 +31,23 @@ namespace TaskService.UnitTests.CBRTasks
             _task = new RatesTask();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
+
+        [Test]
+        public void GetNextRow_ExpectedValues_Correct()
+        {
+            FileParser parser = new FileParser();
+            var task = new TaskDTO
+            {
+                FieldsCount = 3,
+                FieldsSeparator = "^"
+            };
+
+            List<List<string>> fileValues = new List<List<string>>();
+
+            using StreamReader reader = new StreamReader(@"C:\Users\andre\source\repos\TaskService\src\TaskService.UnitTests\TestFiles\test_parser.txt");
+            while(!reader.EndOfStream)
+                fileValues.Add(parser.GetNextRow(reader, task).ToList());
         }
 
         [Test]
