@@ -81,7 +81,6 @@ namespace TaskService.Classes
                         _logger.LogInformation("Reloading complete");
                     }
 
-                    // TODO: Put in const class
                     Thread.Sleep(TaskServiceConst.DelayForPluginsCheck);
                 }
                 catch { Thread.Sleep(TaskServiceConst.DelayForBlockingExc); }

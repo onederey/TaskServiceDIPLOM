@@ -18,5 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\TaskService.CommonTypes\TaskService.CommonTypes.csproj" />
+    <ProjectReference Include="..\TaskService.API\TaskService.API.csproj" />
   </ItemGroup>
 </Project>

@@ -11,11 +11,13 @@ BEGIN
 		,LastWorkTime
 		,TaskStartTime
 		,TaskEndTime
+		,FileMask
 		,FilePath
 		,Url
 		,FieldsCount
 		,FieldsSeparator
 		,Params
+		,SpName
 		,ManualStart
 	FROM
 		[dbo].[ServiceTasks]

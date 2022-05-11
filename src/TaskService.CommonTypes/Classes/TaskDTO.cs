@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaskService.CommonTypes.Classes
+﻿namespace TaskService.CommonTypes.Classes
 {
     /// <summary>
     /// DTO Object for tasks
@@ -29,6 +23,8 @@ namespace TaskService.CommonTypes.Classes
 
 		public DateTime TaskEndTime { get; set; }
 
+		public string FileMask { get; set; }
+
 		public string FilePath { get; set; } = string.Empty;
 
 		public string Url { get; set; } = string.Empty;
@@ -38,6 +34,8 @@ namespace TaskService.CommonTypes.Classes
 		public string FieldsSeparator { get; set; } = "#";
 
 		public string Params { get; set; } = string.Empty;
+
+		public string SpName { get; set; }
 
 		public bool ManualStart { get; set; }
 	}

@@ -1,5 +1,8 @@
 using NLog.Web;
+using System.Text;
 using TaskService;
+using TaskService.API.DataManagers;
+using TaskService.API.Interfaces;
 using TaskService.Classes;
 using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Interfaces;
@@ -7,6 +10,8 @@ using TaskService.CommonTypes.Sql;
 using TaskService.Interfaces;
 
 var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
@@ -22,6 +27,8 @@ IHost host = Host.CreateDefaultBuilder(args)
         TaskServiceConst.InitDelay(config.GetSection("Settings:Delay").Value);
 
         services
+            .AddSingleton<IMailServiceDataManager, MailServiceDataManager>()
+            .AddSingleton<ITaskDataManager, TaskDataManager>()
             .AddSingleton<IMailService, MailService>()
             .AddSingleton<IPluginLoader, PluginLoader>()
             .AddSingleton<IPluginService, PluginService>()
