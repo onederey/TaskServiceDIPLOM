@@ -13,6 +13,18 @@ GO
 
 SET IDENTITY_INSERT [dbBankGM].[dbo].[Events] OFF
 GO
+-----------------------------------------------------------------
+
+IF NOT EXISTS(SELECT 1 FROM [dbo].[Branches])
+BEGIN
+    INSERT INTO dbo.Branches
+    VALUES
+        (0, 'RU1', 'Moscow', NULL),
+        (1, 'RU2', 'SaintPetersburg', NULL),
+        (2, 'RU3', 'Kazan', NULL),
+        (3, 'RU4', 'Izhevsk', NULL),
+        (4, 'RU5', 'Novosibirsk', NULL)
+END
 
 -----------------------------------------------------------------
 
@@ -32,7 +44,7 @@ GO
 IF NOT EXISTS (SELECT 1 FROM dbo.TaskTypes)
 BEGIN
 
-    INSERT INTO dbo.Events ([Description])
+    INSERT INTO dbo.TaskTypes ([Description])
     VALUES ('WebService'),
         ('StoredProcedure'),
         ('File')
