@@ -1,4 +1,5 @@
 ﻿using System.IO.Compression;
+using System.Text;
 using TaskService.CommonTypes.Classes;
 
 namespace TaskService.CommonTypes.Helpers
@@ -78,6 +79,27 @@ namespace TaskService.CommonTypes.Helpers
                     Thread.Sleep(TaskServiceConst.DelayForBlockingExc);
                 }
             }
+        }
+
+        /// <summary>
+        /// Create file
+        /// </summary>
+        public static void CreateFile(string path, string fileName)
+        {
+            var filePath = Path.Combine(path, fileName);
+
+            if (File.Exists(filePath))
+                return;
+
+            File.Create(filePath);
+        }
+
+        public static void AppendToFile(string path, string fileName, StringBuilder stringBuilder) 
+            => AppendToFile(Path.Combine(path, fileName), stringBuilder)
+
+        public static void AppendToFile(string filePath, StringBuilder stringBuilder)
+        {
+            File.AppendAllText(filePath, stringBuilder.ToString());
         }
     }
 }
