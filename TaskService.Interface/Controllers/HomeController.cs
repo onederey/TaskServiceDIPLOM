@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using TaskService.API.DataManagers;
+using TaskService.CommonTypes.Classes;
 using TaskService.Interface.Models;
+using WebApplication1.Data;
 
 namespace TaskService.Interface.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            
         }
 
         public IActionResult Index()

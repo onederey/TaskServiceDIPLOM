@@ -18,7 +18,7 @@
 
 		public DateTime TaskStartTime { get; set; }
 
-		public DateTime TaskEndTime { get; set; }
+		public DateTime TaskEndTime { get; set; }//тут
 
 		public string FilePath { get; set; } = string.Empty;
 
@@ -30,6 +30,6 @@
 
 		public string Params { get; set; } = string.Empty;
 
-		public bool ManualStart { get; set; }
+		public bool ManualStart { get; set; }//+этот
 	}
 }
