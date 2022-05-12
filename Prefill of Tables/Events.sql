@@ -69,14 +69,13 @@ BEGIN
         [TaskName],[LastWorkTime],[TaskStartTime],
         [TaskEndTime],[Dependency],[FilePath],
         [FieldsCount],[FieldsSeparator],[Params],
-        [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url])
+        [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url], [FileMask])
     VALUES
         (1, 1, 1, null,
         'EDBanks', null, '2022-05-01 01:00:00',
         '2022-05-01 23:59:00', '', 'C:\TEST',
         null, null, null,
-        'Andrej', 'Andrej', 'BIC Dictionary', 0, 'https://www.cbr.ru/s/newbik')
+        'Andrej', 'Andrej', 'BIC Dictionary', 0, 'https://www.cbr.ru/s/newbik', '*_ED807_full.xml')
 END
 GO
-
 -----------------------------------------------------------------
