@@ -7,7 +7,7 @@ namespace TaskService.Plugin.CBRTasks.DataManager
     {
         public void InsertIntoTemp(EDBanksModel[] model)
         {
-            string dest = "";
+            string dest = "[dbo].[BIC_Dictionary_TMP]";
 
             SqlDapper.ClearTable(dest);
             var table = SqlDapper.CreateDataTable(model);

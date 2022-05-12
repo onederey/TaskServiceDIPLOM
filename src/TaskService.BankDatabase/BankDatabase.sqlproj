@@ -101,5 +101,7 @@
     <Build Include="Stored Procedures\Service_GetStats.sql" />
     <Build Include="Tables\ServiceNotifications.sql" />
     <Build Include="Stored Procedures\Service_GetMailSettings.sql" />
+    <Build Include="Stored Procedures\Service_ED_Import.sql" />
+    <Build Include="Tables\BIC_Dictionary_TMP.sql" />
   </ItemGroup>
 </Project>
