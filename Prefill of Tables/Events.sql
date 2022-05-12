@@ -1,17 +1,17 @@
 -----------------------------------------------------------------
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Events] ON
+SET IDENTITY_INSERT [dbo].[Events] ON
 GO
 
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Events])
 BEGIN
-    INSERT INTO [dbBankGM].[dbo].[Events] (EventID, [Description])
+    INSERT INTO [dbo].[Events] (EventID, [Description])
     VALUES
         (0, 'Trace'),
         (1, 'UserAction')
 END
 GO
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Events] OFF
+SET IDENTITY_INSERT [dbo].[Events] OFF
 GO
 -----------------------------------------------------------------
 
@@ -28,23 +28,23 @@ END
 
 -----------------------------------------------------------------
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Users] ON
+SET IDENTITY_INSERT [dbo].[Users] ON
 GO
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Users])
 BEGIN
-    INSERT INTO [dbBankGM].[dbo].[Users] (Id, Username, Privileges, PassHash)
+    INSERT INTO [dbo].[Users] (Id, Username, Privileges, PassHash)
     VALUES
         (-100, 'TaskService', 'ServicePrivelege', 'NO PASS')
 END
 GO
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Users] OFF
+SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
 
 IF NOT EXISTS (SELECT 1 FROM dbo.TaskTypes)
 BEGIN
 
-    INSERT INTO dbo.TaskTypes ([Description])
+    INSERT INTO dbo.TaskTypes ([Type])
     VALUES ('WebService'),
         ('StoredProcedure'),
         ('File')
@@ -63,7 +63,7 @@ BEGIN
         [FieldsCount],[FieldsSeparator],[Params],
         [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart])
     VALUES
-        (0, 1, 1, 0,
+        (0, 1, 1, null,
         'CurrentCBRRates', null, '2022-05-01 01:00:00',
         '2022-05-01 23:59:00', '', null,
         null, null, null,
@@ -83,7 +83,7 @@ BEGIN
         [FieldsCount],[FieldsSeparator],[Params],
         [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url], [FileMask])
     VALUES
-        (1, 1, 1, null,
+        (1, 1, 3, null,
         'EDBanks', null, '2022-05-01 01:00:00',
         '2022-05-01 23:59:00', '', 'C:\TEST',
         null, null, null,
