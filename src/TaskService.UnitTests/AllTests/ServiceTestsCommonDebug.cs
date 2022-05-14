@@ -12,10 +12,10 @@ using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 using TaskService.Plugin.CBRTasks;
 
-namespace TaskService.UnitTests.CBRTasks
+namespace TaskService.UnitTests.AllTests
 {
     [TestFixture]
-    public class RatesTaskTests
+    public class ServiceTestsCommonDebug
     {
         private Mock<ILogger> _loggerMock;
         private CancellationToken _token;
@@ -24,17 +24,16 @@ namespace TaskService.UnitTests.CBRTasks
         [SetUp]
         public void SetUp()
         {
-            SqlDapper.InitDapper("Data Source=.;Initial Catalog=dbBankGM;Integrated Security=true", "200");
+            SqlDapper.InitDapper("Data Source=.;Initial Catalog=BankDatabase;Integrated Security=true", "200");
 
             _loggerMock = new Mock<ILogger>();
             _token = new CancellationToken();
-            _task = new RatesTask();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
         [Test]
-        public void GetNextRow_ExpectedValues_Correct()
+        public void FileParser_GetNextRow_ExpectedValues_Correct()
         {
             FileParser parser = new FileParser();
             var task = new TaskDTO
@@ -43,23 +42,29 @@ namespace TaskService.UnitTests.CBRTasks
                 FieldsSeparator = "^"
             };
 
-            List<List<string>> fileValues = new List<List<string>>();
+            List<FileRow> fileValues = new List<FileRow>();
 
             using StreamReader reader = new StreamReader(@"C:\Users\andre\source\repos\TaskService\src\TaskService.UnitTests\TestFiles\test_parser.txt");
             while(!reader.EndOfStream)
-                fileValues.Add(parser.GetNextRow(reader, task).ToList());
+                fileValues.Add(parser.GetNextRow(reader, task));
+
+            Assert.AreEqual(2, fileValues.Count);
+            Assert.AreEqual(3, fileValues.First().RowValues.Count);
         }
 
         [Test]
-        public void Execute_ExpectedWork_NoSpecialParams()
+        public void CBRRates_Execute_ExpectedWork_NoSpecialParams()
         {
-            _task.Execute(_token, _loggerMock.Object);
+            _task = new RatesTask();
+            var result = _task.Execute(_token, _loggerMock.Object);
+
+            Assert.IsTrue(!result.TaskWarnings.Any());
         }
 
         [Test]
-        public void DebugTest()
+        public void EDTask_Execute_ExpectedWork_NoSpecialParams()
         {
-            _task = new EDTask(); //https://www.cbr.ru/s/newbik
+            _task = new EDTask();
             _task.ServiceTask = new TaskDTO
             {
                 Url = "https://www.cbr.ru/s/newbik",
@@ -67,10 +72,9 @@ namespace TaskService.UnitTests.CBRTasks
                 FileMask = "*_ED807_full.xml"
             };
 
-            // add rates hist task to copy rates into rates hist table
-            // add api for interface in data manager
+            var result = _task.Execute(_token, _loggerMock.Object);
 
-            _task.Execute(_token, _loggerMock.Object);
+            Assert.IsTrue(!result.TaskWarnings.Any());
         }
     }
 }

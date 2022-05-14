@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Service_ED_Import]
+﻿create PROCEDURE [dbo].[Service_ED_Import]
 AS
 BEGIN
 	MERGE [dbo].[BIC_Dictionary] as [t]
@@ -6,6 +6,7 @@ BEGIN
     (
 		SELECT
 			 [BIC]
+            ,[BICDec]
             ,[NameP]
             ,[EnglName]
             ,[RegN]
@@ -26,6 +27,7 @@ BEGIN
             ,[RegulationAccType]
             ,[AccountCBRBIC]
             ,[AccountCBRBICDec]
+            ,[AccountStatus]
             ,[UURSDate]
             ,[LWRSDate]
             ,[BusinessDay]
@@ -37,6 +39,7 @@ BEGIN
     WHEN MATCHED THEN
         UPDATE SET
              [t].[BIC] = [s].[BIC]
+            ,[t].[BICDec] = [s].[BICDec]
             ,[t].[NameP] = [s].[NameP]
             ,[t].[EnglName] = [s].[EnglName]
             ,[t].[RegN] = [s].[RegN]
@@ -57,6 +60,7 @@ BEGIN
             ,[t].[RegulationAccType] = [s].[RegulationAccType]
             ,[t].[AccountCBRBIC] = [s].[AccountCBRBIC]
             ,[t].[AccountCBRBICDec] = [s].[AccountCBRBICDec]
+            ,[t].AccountStatus = [s].AccountStatus
             ,[t].[UURSDate] = [s].[UURSDate]
             ,[t].[LWRSDate] = [s].[LWRSDate]
             ,[t].[BusinessDay] = [s].[BusinessDay]
@@ -66,6 +70,7 @@ BEGIN
         INSERT VALUES
         (
              [s].[BIC]
+            ,[s].[BICDec]
             ,[s].[NameP]
             ,[s].[EnglName]
             ,[s].[RegN]
@@ -86,6 +91,7 @@ BEGIN
             ,[s].[RegulationAccType]
             ,[s].[AccountCBRBIC]
             ,[s].[AccountCBRBICDec]
+            ,[s].AccountStatus
             ,[s].[UURSDate]
             ,[s].[LWRSDate]
             ,[s].[BusinessDay]

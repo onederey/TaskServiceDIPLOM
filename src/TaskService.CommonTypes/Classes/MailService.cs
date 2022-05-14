@@ -6,12 +6,12 @@ namespace TaskService.CommonTypes.Classes
 {
     public class MailService : IMailService
     {
-        private readonly ILogger _log;
+        private readonly ILogger<MailService> _log;
         private readonly IMailServiceDataManager _dataManager;
 
         private ICollection<MailSettings> _settings;
 
-        public MailService(ILogger log, IMailServiceDataManager dataManager)
+        public MailService(ILogger<MailService> log, IMailServiceDataManager dataManager)
         {
             _log = log;
             _dataManager = dataManager;

@@ -4,7 +4,7 @@ GO
 
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Events])
 BEGIN
-    INSERT INTO [dbo].[Events] (EventID, [Description])
+    INSERT INTO [dbo].[Events] ([EventId], [Description])
     VALUES
         (0, 'Trace'),
         (1, 'UserAction')

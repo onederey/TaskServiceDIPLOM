@@ -25,6 +25,8 @@ namespace TaskService.Plugin.CBRTasks
                 return new TaskResult(true);
 
             logger.LogInformation($"Start working - {Name}");
+            _dataManager.CleartTempTable();
+
             var taskResult = new TaskResult();
 
             var date = DateTime.Now.Date;
@@ -64,6 +66,7 @@ namespace TaskService.Plugin.CBRTasks
                     }
 
                     _dataManager.ImportFromTemp();
+                    _dataManager.CleartTempTable();
                 }
             }
             catch (Exception ex)

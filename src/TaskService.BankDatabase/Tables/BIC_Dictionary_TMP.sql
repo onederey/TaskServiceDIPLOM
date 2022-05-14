@@ -1,15 +1,16 @@
 ﻿CREATE TABLE [dbo].[BIC_Dictionary_TMP]
 (
-	[BIC]				DECIMAL(15)			NOT NULL,
-	[NameP]				VARCHAR(100)		NOT NULL,
-	[EnglName]			VARCHAR(100)		NOT NULL,
-	[RegN]				INT					NOT NULL,
-	[CntrCd]			VARCHAR(10)			NOT NULL,
+	[BIC]				VARCHAR(15)			NOT NULL,			
+	[BICDec]			NUMERIC(15)			NOT NULL,
+	[NameP]				VARCHAR(500)		NOT NULL,
+	[EnglName]			VARCHAR(500)		NULL,
+	[RegN]				INT					NULL,
+	[CntrCd]			VARCHAR(10)			NULL,
 	[Rgn]				INT					NULL,
 	[Ind]				DECIMAL(10)			NULL,
 	[Tnp]				VARCHAR(5)			NULL,
-	[Nnp]				VARCHAR(30)			NOT NULL,
-	[Adr]				VARCHAR(30)			NOT NULL,
+	[Nnp]				VARCHAR(30)			NULL,
+	[Adr]				VARCHAR(300)		NULL,
 	[DateIn]			DATE				NULL,
 	[DateOut]			DATE				NULL,
 	[PtType]			INT					NULL,
@@ -21,9 +22,10 @@
 	[RegulationAccType]	VARCHAR(10)			NULL,
 	[AccountCBRBIC]		VARCHAR(12)			NULL,
 	AccountCBRBICDec	DECIMAL(12)			NULL,
+	AccountStatus		VARCHAR(20)			null,
 	[UURSDate]			DATE				NULL,
 	[LWRSDate]			DATE				NULL,
-	[BusinessDay]		DATE				NOT NULL,
-	[UpdateDay]			DATE				NOT NULL,
-	[IsLicenseValid]	BIT					NOT NULL
+	[BusinessDay]		DATE				NULL,
+	[UpdateDay]			DATE				NULL,
+	[IsLicenseValid]	BIT					NULL
 )
