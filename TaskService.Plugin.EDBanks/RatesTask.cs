@@ -32,7 +32,7 @@ namespace TaskService.Plugin.CBRTasks
                 var valuteData = _serializer.Deserailize<ValuteData>(cursOnDateXml.OuterXml);
 
                 var data = MapData(valuteData);
-
+                taskResult.AffectedRows = data.Count;
                 ClearTableAndInsert(data, "[dbo].[RatesCB]");
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace TaskService.Plugin.CBRTasks
                 taskResult.AddWarning($"Error while processing - {Name}", true);
             }
 
-            logger.LogInformation($"End working - {Name}");
+            logger.LogInformation($"End working - {Name}; Affected rows - {taskResult.AffectedRows}");
             return taskResult;
         }
 

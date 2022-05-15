@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService.UnitTests", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService.Plugin.CBRTasks", "TaskService.Plugin.EDBanks\TaskService.Plugin.CBRTasks.csproj", "{F56ACA4A-6704-426E-A010-899296FC4DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskService.API", "TaskService.API\TaskService.API.csproj", "{FEAAC155-9F3C-494E-86D4-9C778AE0F566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskService.API", "TaskService.API\TaskService.API.csproj", "{FEAAC155-9F3C-494E-86D4-9C778AE0F566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskService.Plugin.Clients", "TaskService.Plugin.Clients\TaskService.Plugin.Clients.csproj", "{77C5BAF9-0069-4308-904C-BA9BF7D7825F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{FEAAC155-9F3C-494E-86D4-9C778AE0F566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEAAC155-9F3C-494E-86D4-9C778AE0F566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEAAC155-9F3C-494E-86D4-9C778AE0F566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C5BAF9-0069-4308-904C-BA9BF7D7825F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C5BAF9-0069-4308-904C-BA9BF7D7825F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C5BAF9-0069-4308-904C-BA9BF7D7825F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C5BAF9-0069-4308-904C-BA9BF7D7825F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

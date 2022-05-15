@@ -35,6 +35,8 @@ namespace TaskService.Plugin.CBRTasks
             var modelBuffer = new List<EDBanksModel>();
             var maxBufferCount = 500;
 
+            var rowsCount = 0;
+
             try
             {
                 GetFile(fileName);
@@ -51,8 +53,8 @@ namespace TaskService.Plugin.CBRTasks
                     foreach (XmlElement xnode in xRoot)
                     {
                         modelBuffer.Add(_mapper.Map(xnode, businessDay));
-
-                        if(modelBuffer.Count >= maxBufferCount)
+                        rowsCount++;
+                        if (modelBuffer.Count >= maxBufferCount)
                         {
                             _dataManager.InsertIntoTemp(modelBuffer.ToArray());
                             modelBuffer.Clear();
@@ -65,6 +67,7 @@ namespace TaskService.Plugin.CBRTasks
                         modelBuffer.Clear();
                     }
 
+                    taskResult.AffectedRows = rowsCount;
                     _dataManager.ImportFromTemp();
                     _dataManager.CleartTempTable();
                 }
@@ -75,7 +78,7 @@ namespace TaskService.Plugin.CBRTasks
                 taskResult.AddWarning($"Error while processing - {Name}; Exception - {ex.Message}", true);
             }
 
-            logger.LogInformation($"End working - {Name}");
+            logger.LogInformation($"End working - {Name}; Affected rows - {taskResult.AffectedRows}");
             return taskResult;
         }
 
