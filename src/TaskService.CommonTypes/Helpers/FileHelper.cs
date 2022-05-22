@@ -101,5 +101,10 @@ namespace TaskService.CommonTypes.Helpers
         {
             File.AppendAllText(filePath, stringBuilder.ToString());
         }
+
+        public static void MoveFile(string source, string dest)
+        {
+            File.Move(source, dest, true);
+        }
     }
 }
