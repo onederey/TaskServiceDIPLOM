@@ -16,12 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\TaskService.Plugin.Clients\TaskService.Plugin.Clients.csproj" />
     <ProjectReference Include="..\..\TaskService.Plugin.EDBanks\TaskService.Plugin.CBRTasks.csproj" />
     <ProjectReference Include="..\TaskService.CommonTypes\TaskService.CommonTypes.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="TestFiles\" />
   </ItemGroup>
 
 </Project>

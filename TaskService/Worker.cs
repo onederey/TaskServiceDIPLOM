@@ -82,7 +82,7 @@ namespace TaskService
 
             if (stats.ProcessID == ProcessID.OK || stats.ProcessID == ProcessID.Warning)
                 _taskDataManager.SetLastWorkTime(dateStamp, task.TaskID);
-            else
+            else if(stats.ProcessID != ProcessID.OK)
                 _mailService.SendMail(task.TaskName, task.TaskID, result.TaskWarnings);
 
             _taskDataManager.InsertStats(stats);

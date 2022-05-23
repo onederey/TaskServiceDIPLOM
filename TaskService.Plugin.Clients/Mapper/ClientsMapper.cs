@@ -32,7 +32,7 @@ namespace TaskService.Plugin.Clients.Mapper
                 model.CustomerAddress2 = CutStringWithWarning(data[count++], 30, nameof(ClientsDBModel.CustomerAddress2), ref warnings);
                 model.CustomerAddress3 = CutStringWithWarning(data[count++], 30, nameof(ClientsDBModel.CustomerAddress3), ref warnings);
 
-                model.BirthDate = ParseDateTime(data[4], nameof(ClientsDBModel.BirthDate), ref warnings);
+                model.BirthDate = ParseDateTime(data[count++], nameof(ClientsDBModel.BirthDate), ref warnings);
                 
                 model.CustomerFirstName = CutStringWithWarning(data[count++], 30, nameof(ClientsDBModel.CustomerFirstName), ref warnings);
                 model.CustomerMiddleName = CutStringWithWarning(data[count++], 30, nameof(ClientsDBModel.CustomerMiddleName), ref warnings);

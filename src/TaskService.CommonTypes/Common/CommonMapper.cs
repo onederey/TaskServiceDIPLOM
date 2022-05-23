@@ -46,7 +46,7 @@ namespace TaskService.CommonTypes.Common
 
         public DateTime? ParseDateTime(string? s, string fieldName, ref List<TaskWarning> taskWarnings)
         {
-            if (DateTime.TryParse(s, out var res))
+            if (DateTime.TryParse(s, null, System.Globalization.DateTimeStyles.None, out var res))
             {
                 return res;
             }

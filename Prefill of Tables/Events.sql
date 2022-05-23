@@ -91,3 +91,22 @@ BEGIN
 END
 GO
 -----------------------------------------------------------------
+-- Task Clients
+
+IF NOT EXISTS(SELECT 1 FROM dbo.ServiceTasks WHERE TaskName = 'Clients')
+BEGIN
+    INSERT INTO dbo.ServiceTasks 
+        (TaskID, [IsEnabled],[TaskType],[Branch],
+        [TaskName],[LastWorkTime],[TaskStartTime],
+        [TaskEndTime],[Dependency],[FilePath],
+        [FieldsCount],[FieldsSeparator],[Params],
+        [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url], [FileMask])
+    VALUES
+        (1, 1, 3, null,
+        'Clients', null, '2022-05-01 01:00:00',
+        '2022-05-01 23:59:00', '', 'C:\TEST',
+        22, ';', null,
+        'Andrej', 'Andrej', 'Clients update', 0, '', 'Clients*.txt')
+END
+GO
+-----------------------------------------------------------------

@@ -11,6 +11,7 @@ using TaskService.CommonTypes.Classes;
 using TaskService.CommonTypes.Interfaces;
 using TaskService.CommonTypes.Sql;
 using TaskService.Plugin.CBRTasks;
+using TaskService.Plugin.Clients;
 
 namespace TaskService.UnitTests.AllTests
 {
@@ -75,6 +76,31 @@ namespace TaskService.UnitTests.AllTests
             var result = _task.Execute(_token, _loggerMock.Object);
 
             Assert.IsTrue(!result.TaskWarnings.Any());
+        }
+
+        [Test]
+
+        public void ClientsTask_Execute_ExpectedWork_NoSpecialPArams()
+        {
+            _task = new ClientsTask();
+
+            _task.ServiceTask = new TaskDTO
+            {
+                FieldsCount = 22,
+                FilePath = @"C:\Users\andre\source\repos\TaskService\src\TaskService.UnitTests\TestFiles\",
+                FileMask = "clients_*.txt",
+                FieldsSeparator = ";"
+            };
+
+            var result = _task.Execute(_token, _loggerMock.Object);
+
+            Assert.IsTrue(!result.TaskWarnings.Any());
+        }
+
+        [Test]
+        public void DateTimeParser()
+        {
+            Assert.IsTrue(DateTime.TryParse("29/04/2000", out var res));
         }
     }
 }
