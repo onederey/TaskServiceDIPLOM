@@ -94,8 +94,8 @@ namespace TaskService.CommonTypes.Helpers
             File.Create(filePath);
         }
 
-        public static void AppendToFile(string path, string fileName, StringBuilder stringBuilder) 
-            => AppendToFile(Path.Combine(path, fileName), stringBuilder)
+        public static void AppendToFile(string path, string fileName, StringBuilder stringBuilder)
+            => AppendToFile(Path.Combine(path, fileName), stringBuilder);
 
         public static void AppendToFile(string filePath, StringBuilder stringBuilder)
         {

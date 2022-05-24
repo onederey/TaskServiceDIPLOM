@@ -1,17 +1,17 @@
 -----------------------------------------------------------------
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Events] ON
+SET IDENTITY_INSERT [dbo].[Events] ON
 GO
 
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Events])
 BEGIN
-    INSERT INTO [dbBankGM].[dbo].[Events] (EventID, [Description])
+    INSERT INTO [dbo].[Events] (EventID, [Description])
     VALUES
         (0, 'Trace'),
         (1, 'UserAction')
 END
 GO
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Events] OFF
+SET IDENTITY_INSERT [dbo].[Events] OFF
 GO
 -----------------------------------------------------------------
 
@@ -28,23 +28,23 @@ END
 
 -----------------------------------------------------------------
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Users] ON
+SET IDENTITY_INSERT [dbo].[Users] ON
 GO
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Users])
 BEGIN
-    INSERT INTO [dbBankGM].[dbo].[Users] (Id, Username, Privileges, PassHash)
+    INSERT INTO [dbo].[Users] (Id, Username, Privileges, PassHash)
     VALUES
         (-100, 'TaskService', 'ServicePrivelege', 'NO PASS')
 END
 GO
 
-SET IDENTITY_INSERT [dbBankGM].[dbo].[Users] OFF
+SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
 
 IF NOT EXISTS (SELECT 1 FROM dbo.TaskTypes)
 BEGIN
 
-    INSERT INTO dbo.TaskTypes ([Description])
+    INSERT INTO dbo.TaskTypes ([Type])
     VALUES ('WebService'),
         ('StoredProcedure'),
         ('File')
