@@ -33,9 +33,9 @@ namespace TaskService.Plugin.EDBanks.Models
 
 		public string Adr { get; set; }
 
-		public DateTime DateIn { get; set; }
+		public DateTime? DateIn { get; set; }
 
-		public DateTime DateOut { get; set; }
+		public DateTime? DateOut { get; set; }
 
 		public int? PtType { get; set; }
 
@@ -57,13 +57,13 @@ namespace TaskService.Plugin.EDBanks.Models
 
 		public string AccountStatus { get; set; }
 
-		public DateTime UURSDate { get; set; }
+		public DateTime? UURSDate { get; set; }
 
-		public DateTime LWRSDate { get; set; }
+		public DateTime? LWRSDate { get; set; }
 
-		public DateTime BusinessDay { get; set; }
+		public DateTime? BusinessDay { get; set; }
 
-		public DateTime UpdateDay { get => DateTime.Now.Date; }
+		public DateTime? UpdateDay { get => DateTime.Now.Date; }
 
 		public bool? IsLicenseValid { get; set; }
 	}

@@ -6,7 +6,7 @@
 
         public void ResetRowNumber() => CurrentRowNumber = 0;
 
-        public ICollection<string> GetNextRow(StreamReader reader, TaskDTO task)
+        public FileRow GetNextRow(StreamReader reader, TaskDTO task)
         {
             if (reader is null || task is null)
                 throw new ArgumentNullException(nameof(FileParser));
@@ -15,7 +15,7 @@
 
             TryToRestoreRow(ref reader, ref rowValues, task);
 
-            return rowValues.Split(task.FieldsSeparator);
+            return new FileRow { RowValues = rowValues.Split(task.FieldsSeparator).SkipLast(1).ToList() };
         }
 
         private void TryToRestoreRow(ref StreamReader reader, ref string values, TaskDTO task)

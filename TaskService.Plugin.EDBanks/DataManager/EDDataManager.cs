@@ -7,9 +7,8 @@ namespace TaskService.Plugin.CBRTasks.DataManager
     {
         public void InsertIntoTemp(EDBanksModel[] model)
         {
-            string dest = "";
+            string dest = "[dbo].[BIC_Dictionary_TMP]";
 
-            SqlDapper.ClearTable(dest);
             var table = SqlDapper.CreateDataTable(model);
             var mapping = SqlDapper.PrepareColumnMapping(table);
 
@@ -17,5 +16,7 @@ namespace TaskService.Plugin.CBRTasks.DataManager
         }
 
         public void ImportFromTemp() => SqlDapper.ExecuteNonQuerySP("[dbo].[Service_ED_Import]");
+
+        public void CleartTempTable() => SqlDapper.ClearTable("[dbo].[BIC_Dictionary_TMP]");
     }
 }

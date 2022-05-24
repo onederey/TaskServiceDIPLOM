@@ -13,7 +13,7 @@
     </RootPath>
     <RootNamespace>BankDatabase</RootNamespace>
     <AssemblyName>BankDatabase</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <ModelCollation>1033,CS</ModelCollation>
     <DefaultFileStructure>BySchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultCollation>SQL_Latin1_General_CP1251_CS_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -101,5 +101,9 @@
     <Build Include="Stored Procedures\Service_GetStats.sql" />
     <Build Include="Tables\ServiceNotifications.sql" />
     <Build Include="Stored Procedures\Service_GetMailSettings.sql" />
+    <Build Include="Stored Procedures\Service_ED_Import.sql" />
+    <Build Include="Tables\BIC_Dictionary_TMP.sql" />
+    <Build Include="Tables\Customer_TMP.sql" />
+    <Build Include="Stored Procedures\Service_Clients_Import.sql" />
   </ItemGroup>
 </Project>

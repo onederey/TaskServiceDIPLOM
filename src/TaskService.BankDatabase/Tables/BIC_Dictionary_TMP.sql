@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[BIC_Dictionary]
+﻿CREATE TABLE [dbo].[BIC_Dictionary_TMP]
 (
 	[BIC]				VARCHAR(15)			NOT NULL,			
 	[BICDec]			NUMERIC(15)			NOT NULL,
@@ -28,5 +28,4 @@
 	[BusinessDay]		DATE				NULL,
 	[UpdateDay]			DATE				NULL,
 	[IsLicenseValid]	BIT					NULL
-
 )

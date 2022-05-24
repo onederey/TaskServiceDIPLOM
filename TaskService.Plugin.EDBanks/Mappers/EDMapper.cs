@@ -21,6 +21,7 @@ namespace TaskService.Plugin.CBRTasks.Mappers
 
             var model = new EDBanksModel();
 
+            model.BusinessDay = businessDay;
             model.BIC = node.Attributes?.GetNamedItem(nameof(EDBanksModel.BIC))?.Value;
 
             //Participant info

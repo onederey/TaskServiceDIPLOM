@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace TaskService.CommonTypes.Sql
 {
@@ -11,7 +12,7 @@ namespace TaskService.CommonTypes.Sql
         /// Connection string
         /// </summary>
         private static string _connString = string.Empty;
-        
+
         /// <summary>
         /// Timeout for command
         /// </summary>
@@ -35,7 +36,7 @@ namespace TaskService.CommonTypes.Sql
                 conn.Open();
                 return conn.Query<T>(
                     sql: sp,
-                    param: param, 
+                    param: param,
                     commandType: CommandType.StoredProcedure,
                     commandTimeout: _commandTimeout).ToList();
             }
@@ -68,7 +69,7 @@ namespace TaskService.CommonTypes.Sql
         }
 
         public static void ClearTable(string tableName) => ExecuteSqlNonQuery($"DELETE FROM {tableName}");
-        
+
 
         public static DataTable CreateDataTable<T>(IEnumerable<T> list)
         {
@@ -123,9 +124,29 @@ namespace TaskService.CommonTypes.Sql
                         map.ForEach(x => bulk.ColumnMappings.Add(x));
                         bulk.WriteToServer(data);
                     }
-                    catch(Exception ex) 
+                    catch (Exception ex)
                     {
-                        throw new DataException($"Error on BulkInsert to table - {tableName}");
+                        if (ex.Message.Contains("Received an invalid column length from the bcp client for colid"))
+                        {
+                            string pattern = @"\d+";
+                            Match match = Regex.Match(ex.Message.ToString(), pattern);
+                            var index = Convert.ToInt32(match.Value) - 1;
+
+                            FieldInfo fi = typeof(SqlBulkCopy).GetField("_sortedColumnMappings", BindingFlags.NonPublic | BindingFlags.Instance);
+                            var sortedColumns = fi.GetValue(bulk);
+                            var items = (Object[])sortedColumns.GetType().GetField("_items", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(sortedColumns);
+
+                            FieldInfo itemdata = items[index].GetType().GetField("_metadata", BindingFlags.NonPublic | BindingFlags.Instance);
+                            var metadata = itemdata.GetValue(items[index]);
+
+                            var column = metadata.GetType().GetField("column", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).GetValue(metadata);
+                            var length = metadata.GetType().GetField("length", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).GetValue(metadata);
+                            throw new DataException(string.Format("Column: {0} contains data with a length greater than: {1}", column, length));
+                        }
+
+                        throw;
+
+                        //throw new DataException($"Error on BulkInsert to table - {tableName}");
                     }
                 }
             }

@@ -9,5 +9,7 @@ namespace TaskService.CommonTypes.Classes
     public class FileRow
     {
         public ICollection<string> RowValues { get; set; }
+
+        public int RowNumber { get; set; }
     }
 }

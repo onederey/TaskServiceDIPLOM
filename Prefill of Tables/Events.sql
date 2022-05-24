@@ -4,7 +4,7 @@ GO
 
 IF NOT EXISTS(SELECT 1 FROM [dbo].[Events])
 BEGIN
-    INSERT INTO [dbo].[Events] (EventID, [Description])
+    INSERT INTO [dbo].[Events] ([EventId], [Description])
     VALUES
         (0, 'Trace'),
         (1, 'UserAction')
@@ -63,7 +63,7 @@ BEGIN
         [FieldsCount],[FieldsSeparator],[Params],
         [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart])
     VALUES
-        (0, 1, 1, 0,
+        (0, 1, 1, null,
         'CurrentCBRRates', null, '2022-05-01 01:00:00',
         '2022-05-01 23:59:00', '', null,
         null, null, null,
@@ -83,11 +83,30 @@ BEGIN
         [FieldsCount],[FieldsSeparator],[Params],
         [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url], [FileMask])
     VALUES
-        (1, 1, 1, null,
+        (1, 1, 3, null,
         'EDBanks', null, '2022-05-01 01:00:00',
         '2022-05-01 23:59:00', '', 'C:\TEST',
         null, null, null,
         'Andrej', 'Andrej', 'BIC Dictionary', 0, 'https://www.cbr.ru/s/newbik', '*_ED807_full.xml')
+END
+GO
+-----------------------------------------------------------------
+-- Task Clients
+
+IF NOT EXISTS(SELECT 1 FROM dbo.ServiceTasks WHERE TaskName = 'Clients')
+BEGIN
+    INSERT INTO dbo.ServiceTasks 
+        (TaskID, [IsEnabled],[TaskType],[Branch],
+        [TaskName],[LastWorkTime],[TaskStartTime],
+        [TaskEndTime],[Dependency],[FilePath],
+        [FieldsCount],[FieldsSeparator],[Params],
+        [ModifiedBy],[AuthoriziedBy],[Description],[ManualStart], [Url], [FileMask])
+    VALUES
+        (1, 1, 3, null,
+        'Clients', null, '2022-05-01 01:00:00',
+        '2022-05-01 23:59:00', '', 'C:\TEST',
+        22, ';', null,
+        'Andrej', 'Andrej', 'Clients update', 0, '', 'Clients*.txt')
 END
 GO
 -----------------------------------------------------------------
