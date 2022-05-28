@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using TaskService.CommonTypes.Sql;
 using WebApplication1.Data;
+using System.Linq;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-//SqlDapper.InitDapper(connectionString, app.Configuration.GetSection("Settings:CommandTimeout").Value);
+SqlDapper.InitDapper(connectionString, app.Configuration.GetSection("Settings:CommandTimeout").Value);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

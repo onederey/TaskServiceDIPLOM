@@ -15,10 +15,22 @@ namespace TaskService.Interface.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            
         }
 
         public IActionResult Index()
+        {
+            var tt = new TaskDataManager();
+            var taskDTO = new TaskDTOViewModel();
+            taskDTO.GetTaskDTOs = tt.GetTasks();
+            return View(taskDTO);
+        }
+
+        public IActionResult Reports()
+        {
+            return View();
+        }
+
+        public IActionResult Plugins()
         {
             return View();
         }

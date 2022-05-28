@@ -17,10 +17,10 @@ body {
 
 .main {
     width: 100%;
-    max-width: 1180px;
     margin: 0 auto;
 }
 
+/*Шапка*/
 .header {
     background-color: black;
     display: flex;
@@ -28,9 +28,11 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 50px;
+    margin-bottom:20px;
 }
 
 .navbar-nav {
+    margin-top:5px;
     display: flex;
     margin-left: 40px;
     flex-direction: row;
@@ -38,26 +40,39 @@ body {
 }
 
 .nav-link {
-    margin-top: auto;
     margin-right: 40px;
     width: 113px;
-    height: 38px;
+    height: 42px;
     background-color: white;
     color: black;
     font-size: 16px;
     border-radius: 5px;
-    margin-top: 2px;
     font-weight: bold;
-    border: none;
+    border: 2px solid;
 }
 
-    .nav-link:hover {
-        background-color: black;
-        color: white;
-        cursor: pointer;
-    }
+.nav-link:hover {
+    transition: 0.4s;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+}
 
-.modal.active {
+
+.dataTables_wrapper .dataTables_filter label {
+    text-align: right !important;
+}
+
+table{
+    text-align: left;
+}
+
+tr:hover{
+    cursor: pointer;
+}
+
+/*.modal.active {
     display: block;
     position: fixed;
     z-index: 1000;
@@ -124,7 +139,7 @@ body {
     .modal_auth:hover {
         cursor: pointer;
         background-color: #CC221B;
-    }
+    }*/
 
 /*Модальное окно*/
 /* .modal{

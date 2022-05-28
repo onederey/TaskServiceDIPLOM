@@ -1,35 +1,39 @@
-﻿namespace TaskService.Interface.Models
+﻿using TaskService.CommonTypes.Classes;
+
+namespace TaskService.Interface.Models
 {
     public class TaskDTOViewModel
     {
-		public int TaskID { get; set; }
+        public ICollection<TaskDTO>? GetTaskDTOs { get; set; }
 
-		public int TaskType { get; set; }
+        //public int TaskID { get; set; }
 
-		public bool IsEnabled { get; set; }
+        //public int TaskType { get; set; }
 
-		public int? Branch { get; set; }
+        //public bool IsEnabled { get; set; }
 
-		public string? TaskName { get; set; }
+        //public int? Branch { get; set; }
 
-		public string Dependency { get; set; } = string.Empty;
+        //public string? TaskName { get; set; }
 
-		public DateTime? LastWorkTime { get; set; }
+        //public string Dependency { get; set; } = string.Empty;
 
-		public DateTime TaskStartTime { get; set; }
+        //public DateTime? LastWorkTime { get; set; }
 
-		public DateTime TaskEndTime { get; set; }//тут
+        //public DateTime TaskStartTime { get; set; }
 
-		public string FilePath { get; set; } = string.Empty;
+        //public DateTime TaskEndTime { get; set; }//тут
 
-		public string Url { get; set; } = string.Empty;
+        //public string FilePath { get; set; } = string.Empty;
 
-		public int? FieldsCount { get; set; }
+        //public string Url { get; set; } = string.Empty;
 
-		public string FieldsSeparator { get; set; } = "#";
+        //public int? FieldsCount { get; set; }
 
-		public string Params { get; set; } = string.Empty;
+        //public string FieldsSeparator { get; set; } = "#";
 
-		public bool ManualStart { get; set; }//+этот
-	}
+        //public string Params { get; set; } = string.Empty;
+
+        //public bool ManualStart { get; set; }//+этот
+    }
 }
