@@ -17,10 +17,6 @@ namespace TaskService.Interface.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Login(string userName, string password)
-        //{
-        //    WebUser.
-        //}
+        
     }
 }

@@ -72,6 +72,10 @@ tr:hover{
     cursor: pointer;
 }
 
+.mdl-dl{
+    max-width: 1200px;
+}
+
 /*.modal.active {
     display: block;
     position: fixed;
