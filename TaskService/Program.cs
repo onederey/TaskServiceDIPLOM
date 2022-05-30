@@ -40,7 +40,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         logging.SetMinimumLevel(LogLevel.Trace);
     })
     .UseNLog()
-    .UseWindowsService(x => x.ServiceName = "TaskService host")
+    .UseWindowsService(x => x.ServiceName = "TaskService worker")
     .Build();
 
 await host.RunAsync();
