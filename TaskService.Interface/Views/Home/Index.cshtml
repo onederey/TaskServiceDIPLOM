@@ -1,6 +1,6 @@
-﻿@using TaskService.CommonTypes.Classes
+﻿@*@using TaskService.CommonTypes.Classes*@
 @using TaskService.Interface.Models
-@model TaskDTOViewModel
+@model ServiceTaskViewModel
 @using TaskService.API.DataManagers
 @{
     ViewData["Title"] = "Home Page";
@@ -24,40 +24,78 @@
         </thead>
         <tbody>
             @{
-                foreach(TaskDTO task in Model.GetTaskDTOs)
+                foreach(ServiceTask task in Model.GetTaskDTOs)
                 {
-                    <tr class="clickable-row" data-href="url://" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <th scope="row">@task.TaskID.ToString()</th>
+                    <tr class="clickable-row" data-href="url://" data-bs-toggle="modal" data-bs-target="#@task.TaskName">
+                        <th scope="row">@task.TaskID.ToString()</th>
                         <td>@task.TaskType.ToString()</td>
                         <td>@task.IsEnabled</td>
                         <td>@task.Branch.ToString()</td>
                         <td>@task.TaskName</td>
                         <td>@task.Dependency</td>
-                        <td>@task.LastWorkTime</td>
-                        <td>@task.TaskStartTime.ToString("HH:mm:ss")</td>
-                        <td>@task.TaskEndTime.ToString("HH:mm:ss")</td>
+                        <td>@task.LastWorkTime?.ToString("HH:mm:ss")</td>
+                        <td>@task.TaskStartTime?.ToString("HH:mm:ss")</td>
+                        <td>@task.TaskEndTime?.ToString("HH:mm:ss")</td>
                         <td>@task.ManualStart</td>
                     </tr>
+                    <div class="modal fade" id="@task.TaskName" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                         <div class="modal-dialog mdl-dl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Заголовок модального окна</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                </div>
+                                <div class="modal-body mdl-bd">
+                                    @if(@task.TaskType == 1){
+                                        <div class="container-fluid">
+                                           
+                                        </div>
+                                    }
+                                    else{
+                                        <p>net</p>
+                                    }
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 }
-            }        
+            }
         </tbody>
     </table>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <partial name="Modal" />
-  @*<div class="modal-dialog mdl-dl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Заголовок модального окна</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-      </div>
-      <div class="modal-body mdl-bd">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
-      </div>
-    </div>
-  </div>*@
-</div>
+@*
+<table class="table table-hover" id="example" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Type</th>
+                                                <th>Is enabled</th>
+                                                <th>Branch</th>
+                                                <th>Name</th>
+                                                <th>Dependency</th>
+                                                <th>Last work time</th>
+                                                <th>Start time</th>
+                                                <th>End time</th>
+                                                <th>Manual start</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="clickable-row">
+                                                <th scope="row">@task.TaskID.ToString()</th>
+                                                <td>@task.TaskType.ToString()</td>
+                                                <td>@task.IsEnabled</td>
+                                                <td>@task.Branch.ToString()</td>
+                                                <td>@task.TaskName</td>
+                                                <td>@task.Dependency</td>
+                                                <td>@task.LastWorkTime?.ToString("HH:mm:ss")</td>
+                                                <td>@task.TaskStartTime?.ToString("HH:mm:ss")</td>
+                                                <td>@task.TaskEndTime?.ToString("HH:mm:ss")</td>
+                                                <td>@task.ManualStart</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>*@

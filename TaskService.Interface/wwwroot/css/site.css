@@ -59,6 +59,19 @@ body {
     border: 2px solid #FFFFFF;
 }
 
+.nav-link1 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-right: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+    .nav-link1:hover {
+        cursor: pointer;
+        color: white;
+        font-weight:900;
+    }
 
 .dataTables_wrapper .dataTables_filter label {
     text-align: right !important;
@@ -76,122 +89,6 @@ tr:hover{
     max-width: 1200px;
 }
 
-/*.modal.active {
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.6);
-}
-
-.modal .modal_content {
-    background-color: #fefefe;
-    margin: 12% auto;
-    border: 1px solid #888;
-    width: 304px;
-    height: 394px;
-    border-radius: 8px;
-    z-index: 9999;
-}
-
-.entrance__text {
-    margin-top: 36px;
-    margin-bottom: 24px;
-}
-
-#remember {
-    transform: scale(1.23);
-    opacity: 0.9;
-    cursor: pointer;
-    margin: 0;
-}
-
-.modal__text {
-    margin-bottom: 24px;
-    width: 232px;
-    height: 25px;
-    border: none;
-    border-bottom: 1px solid #333333;
-    outline: none;
-}
-
-.checkbox_modal {
-    text-align: left;
-    margin-left: 36px;
-}
-
-    .checkbox_modal label {
-        margin-left: 8px;
-    }
-
-.modal_auth {
-    border-radius: 4px;
-    background-color: #E5261E;
-    ;
-    color: white;
-    border: none;
-    width: 113px;
-    height: 38px;
-    font-size: 16px;
-    margin-top: 106px;
-}
-
-    .modal_auth:hover {
-        cursor: pointer;
-        background-color: #CC221B;
-    }*/
-
-/*Модальное окно*/
-/* .modal{
-    position: relative;
-}
-
-.entrance__text{
-    font-family: Raleway-Medium;
-    font-size: 30px;
-    color: #555;
-    line-height: 1.2;
-    text-transform: uppercase;
-    text-align: left;
-    width: 100%;
-    display: block;
-}
-
-.modal-inner{
-    
-}
-
-.modal.active{
-    display: block;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.6);
-}
-
-.modal .modal_content{
-    background-color: #fefefe;
-    margin: 12% auto;
-    border: 1px solid #888;
-    width: 560px;
-    height: 525px;
-    border-radius: 10px;
-    width: 560px;
-    background: #fff;
-    position: relative;
-    padding-left: 85px;
-    padding-right: 85px;
-    padding-top: 55px;
-    padding-bottom: 55px;
-} */
 
 .limiter {
     width: 100%;

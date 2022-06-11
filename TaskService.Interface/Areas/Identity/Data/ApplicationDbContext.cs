@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TaskService.Interface.Models;
 using TaskService.Interface.Areas.Identity.Data;
 
 namespace TaskService.Interface.Areas.Identity.Data;
@@ -11,6 +12,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
+
+    public DbSet<ServiceTask> ServiceTasks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
