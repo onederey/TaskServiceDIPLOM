@@ -25,7 +25,12 @@ namespace TaskService.Interface.Controllers
             return View(taskDTO);
         }
 
-        public IActionResult Reports()
+        public IActionResult Viewer()
+        {
+            return View();
+        }
+
+        public IActionResult ReportDesigner()
         {
             return View();
         }

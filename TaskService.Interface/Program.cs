@@ -1,5 +1,8 @@
+using DevExpress.AspNetCore;
+using DevExpress.AspNetCore.Reporting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using TaskService.CommonTypes.Sql;
 using TaskService.Interface.Areas.Identity.Data;
 
@@ -9,18 +12,25 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddRazorPages();
 
-//builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-//    .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-        .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDevExpressControls();
+builder.Services.AddMvc();
+//builder.Services.ConfigureReportingServices(configurator => {
+//    configurator.ConfigureWebDocumentViewer(viewerConfigurator => {
+//        viewerConfigurator.UseCachedReportSourceBuilder();
+//    });
+//});
 
 var app = builder.Build();
 
 SqlDapper.InitDapper(connectionString, app.Configuration.GetSection("Settings:CommandTimeout").Value);
 
+
+app.UseDevExpressControls();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -40,6 +50,9 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
+System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls12;
 
 app.MapControllerRoute(
     name: "default",
