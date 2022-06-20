@@ -105,5 +105,6 @@
     <Build Include="Tables\BIC_Dictionary_TMP.sql" />
     <Build Include="Tables\Customer_TMP.sql" />
     <Build Include="Stored Procedures\Service_Clients_Import.sql" />
+    <Build Include="Tables\TempTasks.sql" />
   </ItemGroup>
 </Project>

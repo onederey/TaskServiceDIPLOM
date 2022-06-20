@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[ServiceTasks] (
+﻿CREATE TABLE [dbo].[TempTasks] (
     [TaskID]          INT            NOT NULL,
     [IsEnabled]       BIT            NOT NULL,
     [TaskType]        INT            NULL,
@@ -18,9 +18,5 @@
     [ModifiedBy]      NVARCHAR (50)  NULL,
     [AuthoriziedBy]   NVARCHAR (50)  NULL,
     [Description]     NVARCHAR (250) NULL,
-    [ManualStart]     BIT            NOT NULL,
-    PRIMARY KEY CLUSTERED ([TaskID] ASC),
-    FOREIGN KEY ([Branch]) REFERENCES [dbo].[Branches] ([BranchCode]),
-    FOREIGN KEY ([TaskType]) REFERENCES [dbo].[TaskTypes] ([Id])
+    [ManualStart]     BIT            NOT NULL
 );
-
